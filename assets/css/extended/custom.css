@@ -1,10 +1,10 @@
-/* Custom color override - Dark Navy Blue */
+/* Custom color override - Matte Dark Navy Blue (Tailwind slate-800) */
 :root {
-    --secondary: #1a2332;  /* Texto secundário (datas, metadados) */
-    --tertiary: #1a2332;   /* Elementos terciários */
+    --secondary: #1e293b;  /* Texto secundário (datas, metadados) */
+    --tertiary: #1e293b;   /* Elementos terciários */
 }
 
 .dark {
-    --secondary: #1a2332;  /* Texto secundário no modo escuro */
-    --tertiary: #1a2332;   /* Elementos terciários no modo escuro */
+    --secondary: #1e293b;  /* Texto secundário no modo escuro */
+    --tertiary: #1e293b;   /* Elementos terciários no modo escuro */
 }

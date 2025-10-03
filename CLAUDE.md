@@ -15,6 +15,9 @@ hugo server -D
 # Production build (outputs to public/)
 hugo
 
+# Production build with optimization (as used in CI/CD)
+hugo --gc --minify
+
 # Create new blog post
 hugo new posts/my-post-title.md
 
@@ -31,6 +34,9 @@ hugo version
 - **Language**: Portuguese (pt-br) set via `languageCode` and `defaultContentLanguage`
 - **Theme**: PaperMod (located in `themes/PaperMod/`)
 - **Output directory**: `public/` (generated static site for deployment)
+- **Base URL**: `https://prof-ramos.github.io/sherlockramosblog/` (GitHub Pages with subpath)
+- **Deployment**: Automated GitHub Actions workflow (`.github/workflows/deploy.yml`) deploys to GitHub Pages on push to `main`
+- **Code review**: CodeRabbit configured with markdownlint, yamllint, languagetool, gitleaks, semgrep, and osvScanner
 
 ## Project Architecture
 
@@ -40,8 +46,11 @@ hugo version
 - `archetypes/default.md`: Template for new content with auto-populated fields
 
 ### Theme Customization
-- Custom CSS: `assets/css/extended/custom.css`
-- Custom JavaScript: `layouts/partials/extend_footer.html`
+- Custom CSS: `assets/css/extended/custom.css` - Color overrides for secondary/tertiary colors (#1a2332 dark navy blue)
+- Custom head: `layouts/partials/head.html` - Theme color meta tags and noscript CSS overrides
+- Color scheme:
+  - Primary theme color: #1a2332 (dark navy blue) applied to secondary and tertiary variables
+  - Applied consistently across light/dark modes and noscript fallbacks
 - PaperMod features: ProfileMode, search (Fuse.js), dark/light mode toggle, social icons
 
 ### Key Configuration in hugo.yaml
@@ -57,4 +66,8 @@ hugo version
 - The `public/` directory is auto-generated and should not be manually edited
 - Social icons configured in `params.socialIcons` (GitHub, Twitter, LinkedIn)
 - Security: XSS vulnerability patched in search functionality (fastsearch.js uses safe DOM methods instead of innerHTML)
-- **CRITICAL**: The `docs/` directory and its contents must NEVER be deleted under any circumstances
+- **CRITICAL**: The `docs/` directory contains protected documentation and must NEVER be deleted under any circumstances
+- GitHub Pages deployment is automated: pushing to `main` triggers build and deploy
+- Hugo version in CI/CD: 0.146.0 (extended)
+- Site is deployed as a GitHub Pages project site (subpath deployment) - baseURL reflects this configuration
+- Theme color customization uses CSS custom properties (--secondary, --tertiary) for consistent branding
