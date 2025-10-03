@@ -1,8 +1,10 @@
-/* Custom color override - Change gray to #101820 */
+/* Custom color override - Change gray tones to #101820 */
 :root {
-    --secondary: #101820;
+    --secondary: #101820;  /* Texto secundário (datas, metadados) */
+    --tertiary: #101820;   /* Elementos terciários */
 }
 
 .dark {
-    --secondary: #101820;
+    --secondary: #101820;  /* Texto secundário no modo escuro */
+    --tertiary: #101820;   /* Elementos terciários no modo escuro */
 }
