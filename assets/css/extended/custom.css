@@ -1,0 +1,8 @@
+/* Custom color override - Change gray to #101820 */
+:root {
+    --secondary: #101820;
+}
+
+.dark {
+    --secondary: #101820;
+}
