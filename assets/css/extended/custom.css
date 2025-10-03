@@ -1,10 +1,10 @@
-/* Custom color override - Change gray tones to #101820 */
+/* Custom color override - Dark Navy Blue */
 :root {
-    --secondary: #101820;  /* Texto secundário (datas, metadados) */
-    --tertiary: #101820;   /* Elementos terciários */
+    --secondary: #1a2332;  /* Texto secundário (datas, metadados) */
+    --tertiary: #1a2332;   /* Elementos terciários */
 }
 
 .dark {
-    --secondary: #101820;  /* Texto secundário no modo escuro */
-    --tertiary: #101820;   /* Elementos terciários no modo escuro */
+    --secondary: #1a2332;  /* Texto secundário no modo escuro */
+    --tertiary: #1a2332;   /* Elementos terciários no modo escuro */
 }
