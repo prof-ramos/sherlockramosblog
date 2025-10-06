@@ -32,7 +32,9 @@ hugo version
 
 - **Primary config**: `hugo.yaml` (YAML format, not TOML)
 - **Language**: Portuguese (pt-br) set via `languageCode` and `defaultContentLanguage`
-- **Theme**: PaperMod (located in `themes/PaperMod/`)
+- **Theme**: PaperMod (Git submodule at `themes/PaperMod/`)
+  - To update theme: `git submodule update --remote themes/PaperMod`
+  - When cloning this repo: `git clone --recurse-submodules` or `git submodule update --init --recursive`
 - **Output directory**: `public/` (generated static site for deployment)
 - **Base URL**: `https://prof-ramos.github.io/sherlockramosblog/` (GitHub Pages with subpath)
 - **Deployment**: Automated GitHub Actions workflow (`.github/workflows/deploy.yml`) deploys to GitHub Pages on push to `main`
@@ -46,10 +48,13 @@ hugo version
 - `archetypes/default.md`: Template for new content with auto-populated fields
 
 ### Theme Customization
-- Custom CSS: `assets/css/extended/custom.css` - Color overrides for secondary/tertiary colors (#1a2332 dark navy blue)
-- Custom head: `layouts/partials/head.html` - Theme color meta tags and noscript CSS overrides
+- **IMPORTANT**: Never edit files inside `themes/PaperMod/` directly - the theme is a Git submodule
+- To customize theme files: Copy from `themes/PaperMod/` to the same path in project root (Hugo will prioritize root files)
+- Custom CSS: `assets/css/extended/custom.css` - Color overrides for secondary/tertiary colors
+- Custom head: `layouts/partials/head.html` - Theme color meta tags and noscript CSS overrides (overrides theme version)
 - Color scheme:
-  - Primary theme color: #1a2332 (dark navy blue) applied to secondary and tertiary variables
+  - Primary theme color: #1e293b (Tailwind slate-800 matte dark navy blue)
+  - Applied via CSS custom properties (--secondary, --tertiary) to secondary and tertiary variables
   - Applied consistently across light/dark modes and noscript fallbacks
 - PaperMod features: ProfileMode, search (Fuse.js), dark/light mode toggle, social icons
 
@@ -70,4 +75,3 @@ hugo version
 - GitHub Pages deployment is automated: pushing to `main` triggers build and deploy
 - Hugo version in CI/CD: 0.146.0 (extended)
 - Site is deployed as a GitHub Pages project site (subpath deployment) - baseURL reflects this configuration
-- Theme color customization uses CSS custom properties (--secondary, --tertiary) for consistent branding
