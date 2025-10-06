@@ -122,7 +122,7 @@ reviews:
     regal:
       enabled: false
     actionlint:
-      enabled: false
+      enabled: true
     pmd:
       enabled: false
       config_file: ""
@@ -152,7 +152,7 @@ reviews:
     dotenvLint:
       enabled: false
     htmlhint:
-      enabled: false
+      enabled: true
     checkmake:
       enabled: false
     osvScanner:
