@@ -15,11 +15,6 @@ params:
     imageTitle: "Minha foto"
     imageWidth: 120
     imageHeight: 120
-    buttons:
-      - name: Posts
-        url: /posts/
-      - name: Sobre
-        url: /about/
   showReadingTime: true
   showShareButtons: true
   showPostNavLinks: true
