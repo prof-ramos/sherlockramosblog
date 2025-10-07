@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>SherlockRamosBlog</title>
+    <title>SherlockRamos Blog</title>
     <link>http://localhost:1313/sherlockramosblog/</link>
-    <description>Recent content on SherlockRamosBlog</description>
+    <description>Recent content on SherlockRamos Blog</description>
     <generator>Hugo -- 0.151.0</generator>
     <language>pt-br</language>
     <lastBuildDate>Wed, 01 Dec 2021 22:50:26 +0000</lastBuildDate>
