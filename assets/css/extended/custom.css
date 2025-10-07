@@ -27,13 +27,12 @@
 .profile .button {
     background: var(--secondary) !important;
     color: #fff !important;
-    border: 2px solid var(--secondary) !important;
+    border: none !important;
     transition: all 0.3s ease;
 }
 
 .profile .button:hover {
     background: var(--tertiary) !important;
-    border-color: var(--tertiary) !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
