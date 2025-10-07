@@ -1,7 +1,7 @@
 baseUrl: 'https://prof-ramos.github.io/sherlockramosblog/'
 languageCode: pt-br
 defaultContentLanguage: pt-br
-title: 'SherlockRamosBlog'
+title: 'SherlockRamos - Blog'
 theme: PaperMod
 params:
   env: production
@@ -9,8 +9,8 @@ params:
   author: Gabriel Ramos
   profileMode:
     enabled: true
-    title: "Bem-vindo ao SherlockRamosBlog"
-    subtitle: "Blog pessoal sobre tecnologia, programação e desenvolvimento"
+    title: "Bem-vindo!"
+    subtitle: "Poeta, seresteiro, cantor e mentiroso"
     imageUrl: "https://pbs.twimg.com/profile_images/1848910652808613888/r81-u5pP_400x400.jpg"
     imageTitle: "Minha foto"
     imageWidth: 120
@@ -39,7 +39,7 @@ params:
     - name: twitter
       url: "https://twitter.com/GatoMaconhado_"
   cover:
-    hidden: false
+    hidden: true
     hiddenInList: false
     hiddenInSingle: false
 menu:
