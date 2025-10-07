@@ -69,7 +69,7 @@ hugo version
 - All content files use YAML frontmatter (---), not TOML (+++)
 - Draft posts (draft: true) only appear with `hugo server -D`
 - The `public/` directory is auto-generated and should not be manually edited
-- Social icons configured in `params.socialIcons` (GitHub, Twitter, LinkedIn)
+- Social icons configured in `params.socialIcons` (Twitter)
 - Security: XSS vulnerability patched in search functionality (fastsearch.js uses safe DOM methods instead of innerHTML)
 - **CRITICAL**: The `docs/` directory contains protected documentation and must NEVER be deleted under any circumstances
 - GitHub Pages deployment is automated: pushing to `main` triggers build and deploy

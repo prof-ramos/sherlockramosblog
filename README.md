@@ -58,7 +58,7 @@ hugo version
 - **ProfileMode**: Página inicial exibe perfil com mensagem de boas-vindas, botões de navegação e links sociais
 - **Parâmetros PaperMod**: ShowReadingTime, ShowShareButtons, ShowCodeCopyButtons, ShowBreadCrumbs, etc.
 - **Estrutura de menu**: Navegação principal definida em `menu.main`
-- **Outputs**: HTML e RSS para home page
+- **Outputs**: HTML, RSS e JSON para home page
 
 ## 📝 Notas Importantes
 
