@@ -69,6 +69,9 @@ hugo version
 - All content files use YAML frontmatter (---), not TOML (+++)
 - Draft posts (draft: true) only appear with `hugo server -D`
 - The `public/` directory is auto-generated and should not be manually edited
+  - **IMPORTANT**: Never commit development server output (from `hugo server -D`) to the repository
+  - Always use `hugo --gc --minify` for production builds before committing changes to `public/`
+  - Development server output includes localhost URLs and livereload scripts that should not be deployed
 - Social icons configured in `params.socialIcons` (Twitter)
 - Security: XSS vulnerability patched in search functionality (fastsearch.js uses safe DOM methods instead of innerHTML)
 - **CRITICAL**: The `docs/` directory contains protected documentation and must NEVER be deleted under any circumstances
