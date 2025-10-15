@@ -1,48 +1,766 @@
-/* Custom Sherlock-inspired color scheme */
+/* Custom Navy Background Theme */
 :root {
-    --theme: #fafafa;
-    --entry: #ffffff;
-    --primary: #2c2c2c;
-    --secondary: #6b4423;  /* Marrom terra (tema Sherlock) */
-    --tertiary: #8b5a3c;   /* Tom de couro */
-    --content: #4a4a4a;
-    --hljs-bg: #f5f5f5;
-    --code-bg: #efefef;
-    --border: #e0e0e0;
+    --theme: rgba(15, 23, 42, 0.7) !important;
+    --entry: rgba(30, 41, 59, 0.85) !important;
+    --primary: #f1f5f9 !important;
+    --secondary: #60a5fa;  /* Azul accent */
+    --tertiary: #3b82f6;   /* Azul mais escuro */
+    --content: #cbd5e1 !important;
+    --hljs-bg: rgba(30, 41, 59, 0.9) !important;
+    --code-bg: rgba(51, 65, 85, 0.9) !important;
+    --border: rgba(71, 85, 105, 0.5) !important;
 }
 
 .dark {
-    --theme: #1d1d1d;
-    --entry: #262626;
-    --primary: #e8e8e8;
-    --secondary: #c4915b;  /* Dourado envelhecido */
-    --tertiary: #a67c52;   /* Bronze vintage */
-    --content: #b8b8b8;
-    --hljs-bg: #2e2e2e;
-    --code-bg: #333333;
-    --border: #3a3a3a;
+    --theme: rgba(10, 15, 30, 0.7) !important;
+    --entry: rgba(15, 23, 42, 0.85) !important;
+    --primary: #f1f5f9 !important;
+    --secondary: #60a5fa;
+    --tertiary: #3b82f6;
+    --content: #cbd5e1 !important;
+    --hljs-bg: rgba(20, 30, 50, 0.9) !important;
+    --code-bg: rgba(30, 40, 60, 0.9) !important;
+    --border: rgba(51, 65, 85, 0.5) !important;
 }
 
-/* Botões do ProfileMode com melhor contraste */
+/* Background gradiente navy profundo com múltiplas camadas */
+body {
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(37, 99, 235, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 0%, rgba(30, 58, 138, 0.2) 0%, transparent 50%),
+        linear-gradient(180deg, #0a0f1e 0%, #0f172a 50%, #1e293b 100%) !important;
+    background-attachment: fixed !important;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Textura de pontos mais visível e orgânica */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 25% 75%, rgba(96, 165, 250, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px, 50px 50px;
+    background-position: 0 0, 25px 25px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+/* Camada de brilho sutil */
+body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: glow 20s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.3; transform: translate(0, 0); }
+    50% { opacity: 0.6; transform: translate(10%, 10%); }
+}
+
+/* Modo escuro - ainda mais profundo */
+.dark body {
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(37, 99, 235, 0.2) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(29, 78, 216, 0.15) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 0%, rgba(20, 40, 100, 0.25) 0%, transparent 50%),
+        linear-gradient(180deg, #020617 0%, #0a0f1e 50%, #0f172a 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Container principal com backdrop blur */
+.main,
+main {
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Cards com efeito glassmorphism */
+.post-entry,
+.first-entry {
+    background: rgba(30, 41, 59, 0.6) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(71, 85, 105, 0.3) !important;
+    border-radius: 16px !important;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.post-entry:hover,
+.first-entry:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 48px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+}
+
+.dark .post-entry,
+.dark .first-entry {
+    background: rgba(15, 23, 42, 0.65) !important;
+}
+
+/* Header com glassmorphism */
+.header,
+header {
+    background: rgba(15, 23, 42, 0.8) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(71, 85, 105, 0.3) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.dark .header,
+.dark header {
+    background: rgba(10, 15, 30, 0.85) !important;
+}
+
+/* Footer */
+.footer,
+footer {
+    background: rgba(15, 23, 42, 0.8) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 1px solid rgba(71, 85, 105, 0.3) !important;
+    position: relative;
+    z-index: 1;
+}
+
+.dark .footer,
+.dark .footer {
+    background: rgba(10, 15, 30, 0.85) !important;
+}
+
+/* Botões do ProfileMode modernos com glassmorphism */
 .profile .button {
-    background: var(--secondary) !important;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.8) 0%, rgba(59, 130, 246, 0.9) 100%) !important;
     color: #fff !important;
-    border: none !important;
-    transition: all 0.3s ease;
+    border: 1px solid rgba(147, 197, 253, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 12px 28px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    box-shadow:
+        0 4px 16px rgba(59, 130, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.profile .button:hover::before {
+    left: 100%;
 }
 
 .profile .button:hover {
-    background: var(--tertiary) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 1) 0%, rgba(37, 99, 235, 1) 100%) !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 8px 24px rgba(59, 130, 246, 0.5),
+        0 4px 12px rgba(37, 99, 235, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(147, 197, 253, 0.5) !important;
 }
 
-/* Ícones sociais com tema dourado */
+.profile .button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Profile container melhorado */
+.profile {
+    background: rgba(30, 41, 59, 0.5) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(71, 85, 105, 0.3) !important;
+    border-radius: 24px !important;
+    padding: 48px !important;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .profile {
+    background: rgba(15, 23, 42, 0.6) !important;
+}
+
+/* Imagem do perfil com borda glowing */
+.profile img {
+    border: 3px solid rgba(96, 165, 250, 0.5) !important;
+    box-shadow:
+        0 0 30px rgba(59, 130, 246, 0.4),
+        0 8px 24px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.4s ease;
+}
+
+.profile img:hover {
+    transform: scale(1.05);
+    border-color: rgba(96, 165, 250, 0.8) !important;
+    box-shadow:
+        0 0 40px rgba(59, 130, 246, 0.6),
+        0 12px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Título do profile */
+.profile .profile_inner h1 {
+    color: #f1f5f9 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-weight: 700 !important;
+}
+
+.profile .profile_inner .subtitle {
+    color: #cbd5e1 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícones sociais modernos */
+.social-icons {
+    margin-top: 24px !important;
+}
+
 .social-icons a {
-    color: var(--secondary) !important;
+    color: rgba(96, 165, 250, 0.9) !important;
+    background: rgba(59, 130, 246, 0.1) !important;
+    border: 1px solid rgba(96, 165, 250, 0.2) !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .social-icons a:hover {
-    color: var(--tertiary) !important;
-    transform: scale(1.1);
+    color: #fff !important;
+    background: rgba(59, 130, 246, 0.8) !important;
+    border-color: rgba(96, 165, 250, 0.6) !important;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Links melhorados */
+a {
+    color: rgba(96, 165, 250, 0.95) !important;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: rgba(147, 197, 253, 1) !important;
+    text-decoration: none;
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+}
+
+/* Títulos de posts */
+.post-title,
+.entry-header h2 {
+    color: #f1f5f9 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.post-entry:hover .post-title,
+.first-entry:hover .entry-header h2 {
+    color: rgba(147, 197, 253, 1) !important;
+    text-shadow: 0 0 16px rgba(96, 165, 250, 0.4);
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(96, 165, 250, 0.6), rgba(59, 130, 246, 0.8));
+    border-radius: 10px;
+    border: 2px solid rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(96, 165, 250, 0.9), rgba(59, 130, 246, 1));
+}
+
+/* ============================================
+   HERO COMPACTO (CUSTOM HOMEPAGE)
+   ============================================ */
+
+.hero-compact {
+    max-height: 35vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    border: 3px solid rgba(96, 165, 250, 0.5) !important;
+    box-shadow:
+        0 0 30px rgba(59, 130, 246, 0.4),
+        0 8px 24px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.4s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    border-color: rgba(96, 165, 250, 0.8) !important;
+    box-shadow:
+        0 0 40px rgba(59, 130, 246, 0.6),
+        0 12px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-compact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #f1f5f9 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+    font-size: 1.125rem;
+    color: #cbd5e1 !important;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   CTA BUTTONS
+   ============================================ */
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cta-primary {
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.8) 0%, rgba(59, 130, 246, 0.9) 100%) !important;
+    color: #fff !important;
+    border: 1px solid rgba(147, 197, 253, 0.3) !important;
+    border-radius: 12px !important;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: inherit;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow:
+        0 4px 16px rgba(59, 130, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-primary:hover::before {
+    left: 100%;
+}
+
+.cta-primary:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 1) 0%, rgba(37, 99, 235, 1) 100%) !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 8px 24px rgba(59, 130, 246, 0.5),
+        0 4px 12px rgba(37, 99, 235, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(147, 197, 253, 0.5) !important;
+}
+
+.cta-primary:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.cta-primary .icon-arrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+
+.cta-secondary {
+    padding: 0.875rem 2rem;
+    border: 2px solid rgba(71, 85, 105, 0.5);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: rgba(96, 165, 250, 0.95) !important;
+    background: rgba(30, 41, 59, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.cta-secondary:hover {
+    border-color: rgba(96, 165, 250, 0.6);
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* ============================================
+   POSTS GRID
+   ============================================ */
+
+.posts-grid-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    color: #f1f5f9 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(96, 165, 250, 0.8), rgba(59, 130, 246, 0.6));
+    border-radius: 2px;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   POST CARDS (CUSTOM)
+   ============================================ */
+
+.post-card {
+    background: rgba(30, 41, 59, 0.6) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(71, 85, 105, 0.3) !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 48px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+}
+
+.dark .post-card {
+    background: rgba(15, 23, 42, 0.65) !important;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: rgba(51, 65, 85, 0.5);
+}
+
+.card-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover .card-thumbnail img {
+    transform: scale(1.05);
+}
+
+.card-thumbnail-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(51, 65, 85, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%);
+}
+
+.card-thumbnail-placeholder svg {
+    opacity: 0.3;
+    color: rgba(96, 165, 250, 0.5);
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    color: #f1f5f9 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+
+    /* Truncate após 2 linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-card:hover .card-title {
+    color: rgba(147, 197, 253, 1) !important;
+    text-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
+}
+
+.card-excerpt {
+    font-size: 0.9rem;
+    color: #cbd5e1 !important;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+
+    /* Truncate após 3 linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: rgba(203, 213, 225, 0.7) !important;
+    margin-bottom: 0.75rem;
+}
+
+.meta-separator {
+    opacity: 0.5;
+}
+
+.card-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(51, 65, 85, 0.6);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(96, 165, 250, 0.9) !important;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+.post-card:hover .tag {
+    background: rgba(59, 130, 246, 0.3);
+    border-color: rgba(96, 165, 250, 0.4);
+    color: rgba(147, 197, 253, 1) !important;
+}
+
+/* ============================================
+   VIEW ALL BUTTON
+   ============================================ */
+
+.view-all {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-view-all {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid rgba(71, 85, 105, 0.5);
+    border-radius: 12px;
+    text-decoration: none;
+    color: rgba(96, 165, 250, 0.95) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background: rgba(30, 41, 59, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-view-all:hover {
+    border-color: rgba(96, 165, 250, 0.6);
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .posts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-compact {
+        max-height: 50vh;
+        min-height: 280px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero-compact h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   ACESSIBILIDADE
+   ============================================ */
+
+/* Foco visível melhorado */
+*:focus-visible {
+    outline: 2px solid rgba(96, 165, 250, 0.8);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* SVG icons sizing */
+.icon-social {
+    width: 20px;
+    height: 20px;
 }
