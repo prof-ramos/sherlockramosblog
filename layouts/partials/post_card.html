@@ -1,0 +1,75 @@
+<article class="post-card">
+  <a href="{{ .Permalink }}" class="card-link">
+    {{- /* Thumbnail */ -}}
+    {{- if .Params.cover.image }}
+    <div class="card-thumbnail">
+      {{- $img := .Params.cover.image }}
+      {{- if .Params.cover.relative }}
+        {{- $img = .Resources.Get .Params.cover.image }}
+        {{- if $img }}
+          {{- $thumb := $img.Resize "600x webp q85" }}
+          <img
+            src="{{ $thumb.RelPermalink }}"
+            alt="{{ .Params.cover.alt | default .Title }}"
+            width="{{ $thumb.Width }}"
+            height="{{ $thumb.Height }}"
+            loading="lazy"
+          />
+        {{- else }}
+          <img
+            src="{{ .Params.cover.image }}"
+            alt="{{ .Params.cover.alt | default .Title }}"
+            loading="lazy"
+          />
+        {{- end }}
+      {{- else }}
+        <img
+          src="{{ .Params.cover.image | absURL }}"
+          alt="{{ .Params.cover.alt | default .Title }}"
+          loading="lazy"
+        />
+      {{- end }}
+    </div>
+    {{- else }}
+    <div class="card-thumbnail card-thumbnail-placeholder">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+      </svg>
+    </div>
+    {{- end }}
+
+    {{- /* Content */ -}}
+    <div class="card-content">
+      <h3 class="card-title">{{ .Title }}</h3>
+
+      {{- /* Summary */ -}}
+      {{- if .Params.summary }}
+      <p class="card-excerpt">{{ .Params.summary }}</p>
+      {{- else if .Description }}
+      <p class="card-excerpt">{{ .Description }}</p>
+      {{- else }}
+      <p class="card-excerpt">{{ .Summary | truncate 150 }}</p>
+      {{- end }}
+
+      {{- /* Meta */ -}}
+      <div class="card-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Day }} {{ index (slice "Jan" "Fev" "Mar" "Abr" "Mai" "Jun" "Jul" "Ago" "Set" "Out" "Nov" "Dez") (sub .Date.Month 1) }} {{ .Date.Year }}
+        </time>
+        {{- if .Params.ShowReadingTime | default (.Site.Params.ShowReadingTime) }}
+        <span class="meta-separator">•</span>
+        <span class="reading-time">{{ .ReadingTime }} min</span>
+        {{- end }}
+      </div>
+
+      {{- /* Tags */ -}}
+      {{- if .Params.tags }}
+      <div class="card-tags">
+        {{- range first 3 .Params.tags }}
+        <span class="tag">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+  </a>
+</article>

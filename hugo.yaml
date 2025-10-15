@@ -3,24 +3,46 @@ languageCode: pt-br
 defaultContentLanguage: pt-br
 title: 'SherlockRamos - Blog'
 theme: PaperMod
+
+# Image processing configuration
+imaging:
+  resampleFilter: lanczos
+  quality: 85
+  anchor: smart
+
 params:
   env: production
-  description: "Blog pessoal de Gabriel Ramos"
+  description: "Reflexões sobre tecnologia, cultura e desenvolvimento"
   author: Gabriel Ramos
+
+  # Main sections for homepage
+  mainSections:
+    - posts
+
+  # Profile Mode Configuration
   profileMode:
     enabled: true
     title: "Bem-vindo!"
     subtitle: "Poeta, seresteiro, cantor e mentiroso"
     imageUrl: "https://pbs.twimg.com/profile_images/1975318443646709760/Ve9wMLwI_400x400.jpg"
-    imageTitle: "Minha foto"
+    imageTitle: "Gabriel Ramos"
     imageWidth: 120
     imageHeight: 120
+    buttons:
+      - name: Posts
+        url: /posts
+      - name: Tags
+        url: /tags
+      - name: Sobre
+        url: /about
+
+  # Feature Toggles
   showReadingTime: true
   showShareButtons: true
   showPostNavLinks: true
   showBreadCrumbs: true
   showCodeCopyButtons: true
-  showWordCount: true
+  showWordCount: false
   showRssButtonInSectionTermList: true
   useHugoToc: true
   disableSpecial1stPost: false
@@ -28,13 +50,35 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showToc: false
+  showToc: true
   tocOpen: false
+
+  # Theme Configuration
+  defaultTheme: dark
+  disableThemeToggle: false
+
+  # Search Configuration (Fuse.js)
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+  # Social Icons
   socialIcons:
     - name: twitter
       url: "https://twitter.com/GatoMaconhado_"
+    - name: rss
+      url: "/index.xml"
+
+  # Cover Images
   cover:
-    hidden: true
+    linkFullImages: true
+    responsiveImages: true
+    hidden: false
     hiddenInList: false
     hiddenInSingle: false
 menu:
@@ -51,6 +95,10 @@ menu:
       name: Tags
       url: /tags/
       weight: 30
+    - identifier: search
+      name: Buscar
+      url: /search/
+      weight: 40
 outputs:
   home:
     - html
