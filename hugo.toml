@@ -1,0 +1,48 @@
+baseURL = "https://prof-ramos.github.io/sherlockramosblog/"
+languageCode = "pt-br"
+title = "SherlockRamos Blog"
+theme = "PaperMod"
+
+[params]
+  description = "Blog Pessoal de SherlockRamos"
+  author = "SherlockRamos"
+
+  # PaperMod specific params
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+
+  [params.homeInfoParams]
+    Title = "Bem-vindo ao Blog SherlockRamos"
+    Content = "Blog pessoal sobre tecnologia, programação e outras curiosidades"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/prof-ramos"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "about"
+    name = "Sobre"
+    url = "/about/"
+    weight = 30
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
