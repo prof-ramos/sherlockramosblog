@@ -6,7 +6,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 
 ### Persona 1: Technical Developer (Primary)
 
-```
+```markdown
 ┌─────────────────────────────────────────────────────────┐
 │  Name: Ana Silva                                        │
 │  Age: 28                                                │
@@ -14,7 +14,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 │  Location: São Paulo, Brazil                           │
 │  Experience: 5 years                                   │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 **Quote**: *"I need quick, practical solutions to technical problems I encounter daily."*
 
@@ -66,7 +66,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 
 ### Persona 2: Tech-Curious Student (Secondary)
 
-```
+```markdown
 ┌─────────────────────────────────────────────────────────┐
 │  Name: João Santos                                      │
 │  Age: 21                                                │
@@ -74,7 +74,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 │  Location: Rio de Janeiro, Brazil                      │
 │  Experience: Learning (2 years)                        │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 **Quote**: *"I want to understand the 'why' behind the code, not just the 'how'."*
 
@@ -126,7 +126,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 
 ### Persona 3: Engineering Manager (Tertiary)
 
-```
+```markdown
 ┌─────────────────────────────────────────────────────────┐
 │  Name: Carlos Oliveira                                  │
 │  Age: 35                                                │
@@ -134,7 +134,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 │  Location: Belo Horizonte, Brazil                      │
 │  Experience: 12 years                                  │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 **Quote**: *"I need to stay informed about technology trends to guide my team effectively."*
 
@@ -185,7 +185,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 
 ### Persona 4: Career Switcher (Emerging)
 
-```
+```markdown
 ┌─────────────────────────────────────────────────────────┐
 │  Name: Mariana Costa                                    │
 │  Age: 32                                                │
@@ -193,7 +193,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 │  Location: Porto Alegre, Brazil                        │
 │  Experience: Beginner (6 months coding)                │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 **Quote**: *"I need everything explained clearly - I'm still learning the basics."*
 
@@ -421,7 +421,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 
 ### Testing Schedule
 
-```
+```markdown
 Week 1-2: Planning & Recruitment
 ├─ Define test scenarios
 ├─ Create test materials
@@ -449,7 +449,7 @@ Week 7-8: Implementation
 ├─ Fix critical issues
 ├─ Iterate designs
 └─ Prepare for re-test
-```
+```markdown
 
 ### Participant Recruitment
 
@@ -475,7 +475,7 @@ Week 7-8: Implementation
 
 #### Quantitative Metrics
 
-```
+```markdown
 Task Success Rate: (Completed tasks / Total tasks) × 100
 
 Time on Task: Average time to complete each scenario
@@ -485,7 +485,7 @@ Error Rate: (Number of errors / Total attempts) × 100
 Clicks to Success: Average clicks needed to complete task
 
 System Usability Scale (SUS): Standard 10-question survey
-```
+```javascript
 
 #### Qualitative Data
 
@@ -534,6 +534,7 @@ System Usability Scale (SUS): Standard 10-question survey
 ### Reporting Template
 
 ```markdown
+
 ## Issue #1: Search Not Discoverable on Mobile
 
 **Severity**: High (P1)
@@ -560,7 +561,7 @@ Move search icon to main mobile header, always visible.
 
 **Success Metric**:
 95% of users find search within 5 seconds
-```
+```markdown
 
 ### Post-Testing Actions
 

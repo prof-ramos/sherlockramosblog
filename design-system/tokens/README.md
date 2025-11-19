@@ -127,7 +127,7 @@ Layering system to prevent conflicts:
   background-color: var(--color-primary-700);
   box-shadow: var(--shadow-md);
 }
-```
+```css
 
 ### In JavaScript
 
@@ -136,7 +136,7 @@ import tokens from './design-tokens.json';
 
 const primaryColor = tokens.color.primary[600].value;
 const spacing = tokens.spacing[4].value;
-```
+```css
 
 ## Accessibility Considerations
 

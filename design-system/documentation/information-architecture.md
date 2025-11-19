@@ -4,7 +4,7 @@ Complete information architecture for the Sherlock Ramos Blog, defining content 
 
 ## Site Map
 
-```
+```markdown
 Sherlock Ramos Blog
 │
 ├── Home (/)
@@ -50,7 +50,7 @@ Sherlock Ramos Blog
     ├── 404 Error
     ├── Privacy Policy (optional)
     └── Terms of Use (optional)
-```
+```markdown
 
 ## Content Inventory
 
@@ -115,7 +115,7 @@ Sherlock Ramos Blog
 **Purpose**: Deliver long-form content
 
 **Content Structure**:
-```
+```markdown
 ┌─────────────────────────────────────┐
 │ Breadcrumbs                         │
 │ Home > Posts > Category > Title     │
@@ -152,7 +152,7 @@ Sherlock Ramos Blog
 ├─────────────────────────────────────┤
 │ Comments (optional)                 │
 └─────────────────────────────────────┘
-```
+```text
 
 **Content Elements**:
 - Introduction paragraph
@@ -228,7 +228,7 @@ Sherlock Ramos Blog
 **Purpose**: Introduce author, build credibility
 
 **Content Sections**:
-```
+```markdown
 ┌─────────────────────────────────────┐
 │ Page Header                         │
 │ • Title: "Sobre"                    │
@@ -256,7 +256,7 @@ Sherlock Ramos Blog
 │ CTA                                 │
 │ • "View My Posts" button            │
 └─────────────────────────────────────┘
-```
+```markdown
 
 **Update Frequency**: Quarterly or as needed
 
@@ -290,11 +290,11 @@ Sherlock Ramos Blog
 
 ### Primary Navigation (Desktop)
 
-```
+```markdown
 ┌──────────────────────────────────────────────────────────┐
 │ [Logo]  Home  Posts  Categories  Tags  About  [Search🔍] │
 └──────────────────────────────────────────────────────────┘
-```
+```markdown
 
 **Items**: 5-6 main links (optimal for usability)
 
@@ -308,7 +308,7 @@ Sherlock Ramos Blog
 
 ### Mobile Navigation
 
-```
+```markdown
 ┌───────────────────────┐
 │ [☰] [Logo]  [🔍]     │ ← Header
 └───────────────────────┘
@@ -325,7 +325,7 @@ Sherlock Ramos Blog
 │ ─────────────────     │
 │ [GitHub] [LinkedIn]   │
 └───────────────────────┘
-```
+```markdown
 
 **Features**:
 - Hamburger menu icon
@@ -336,7 +336,7 @@ Sherlock Ramos Blog
 
 ### Footer Navigation
 
-```
+```markdown
 ┌─────────────────────────────────────────────────────────┐
 │  Quick Links        Categories         Social           │
 │  • Home             • Technology       • GitHub          │
@@ -346,7 +346,7 @@ Sherlock Ramos Blog
 │                                                          │
 │  © 2025 Sherlock Ramos | Privacy | Terms                │
 └─────────────────────────────────────────────────────────┘
-```
+```markdown
 
 **Purpose**:
 - Backup navigation
@@ -357,10 +357,10 @@ Sherlock Ramos Blog
 
 ### Breadcrumb Navigation
 
-```
+```markdown
 Home > Posts > Technology > Complete Guide to Web Accessibility
 [Link] [Link]  [Link]       [Current Page - no link]
-```
+```markdown
 
 **Implementation**:
 - All pages except homepage
@@ -387,13 +387,13 @@ Home > Posts > Technology > Complete Guide to Web Accessibility
 
 ### 1. Hierarchy
 
-```
+```markdown
 Level 1: Main sections (Home, Posts, About)
     │
     ├─ Level 2: Sub-sections (Categories, Tags)
     │      │
     │      └─ Level 3: Individual items (Posts, Category pages)
-```
+```markdown
 
 **Rules**:
 - Maximum 3 levels deep
@@ -458,7 +458,7 @@ Level 1: Main sections (Home, Posts, About)
 
 ### 4. Content Relationships
 
-```
+```markdown
 Blog Post
     │
     ├─── Belongs to: 1 Category
@@ -466,7 +466,7 @@ Blog Post
     ├─── Written by: 1 Author
     ├─── Related to: 3-5 Similar Posts
     └─── Part of: 1 Series (optional)
-```
+```markdown
 
 **Related Content Logic**:
 1. Same category
@@ -505,7 +505,7 @@ Blog Post
   location: 0,
   distance: 100
 }
-```
+```markdown
 
 ### Search Features
 
@@ -520,7 +520,7 @@ Blog Post
 
 ### Pattern
 
-```
+```javascript
 https://sherlockramos.github.io/[content-type]/[slug]/
 
 Examples:
@@ -531,7 +531,7 @@ https://sherlockramos.github.io/categories/technology/
 https://sherlockramos.github.io/tags/javascript/
 https://sherlockramos.github.io/about/
 https://sherlockramos.github.io/search/?q=react
-```
+```html
 
 ### URL Best Practices
 
@@ -589,7 +589,7 @@ https://sherlockramos.github.io/search/?q=react
   "dateModified": "2025-01-15"
 }
 </script>
-```
+```css
 
 ## Content Guidelines
 

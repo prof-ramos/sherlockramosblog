@@ -52,7 +52,7 @@ Design tokens are the foundational elements of the design system, stored as reus
 --color-warning-*
 --color-error-*
 --color-info-*
-```
+```css
 
 #### Typography
 ```css
@@ -72,7 +72,7 @@ Design tokens are the foundational elements of the design system, stored as reus
 
 /* Letter spacing */
 --letter-spacing-*
-```
+```css
 
 #### Spacing
 ```css
@@ -80,7 +80,7 @@ Design tokens are the foundational elements of the design system, stored as reus
 --spacing-0
 --spacing-px
 --spacing-1 through --spacing-96
-```
+```css
 
 #### Other Tokens
 - Border radius (`--radius-*`)
@@ -99,7 +99,7 @@ Design tokens are the foundational elements of the design system, stored as reus
   font-size: var(--font-size-base);
   transition: all var(--duration-base) var(--easing-out);
 }
-```
+```css
 
 ## Components
 
@@ -118,7 +118,7 @@ Reusable UI components with accessibility built-in.
 <button class="button button--primary button--md">
   Get Started
 </button>
-```
+```html
 
 #### Forms (`design-system/components/form-inputs.md`)
 - Text inputs, textareas, selects
@@ -138,7 +138,7 @@ Reusable UI components with accessibility built-in.
     aria-required="true"
   />
 </div>
-```
+```html
 
 #### Cards (`design-system/components/card.md`)
 - Basic, Elevated, Outlined variants
@@ -155,7 +155,7 @@ Reusable UI components with accessibility built-in.
     <p class="card__description">Description</p>
   </div>
 </article>
-```
+```html
 
 ### Creating New Components
 
@@ -299,7 +299,7 @@ Design tokens are available as CSS custom properties:
   padding: var(--spacing-4);
   border-radius: var(--radius-lg);
 }
-```
+```css
 
 ### Using Components
 
@@ -310,7 +310,7 @@ Components are documented with complete HTML and CSS examples:
 <button class="button button--primary">
   Click Me
 </button>
-```
+```css
 
 ### Responsive Development
 
@@ -335,7 +335,7 @@ Follow mobile-first approach:
     width: 33.333%;
   }
 }
-```
+```html
 
 ### Accessibility Implementation
 
@@ -371,7 +371,7 @@ Always include:
 
 ## File Structure
 
-```
+```css
 sherlockramosblog/
 ├── archetypes/          # Content templates
 ├── assets/
@@ -411,7 +411,7 @@ sherlockramosblog/
 ├── hugo.toml            # Hugo configuration
 ├── LICENSE
 └── README.md
-```
+```bash
 
 ## Browser Support
 
@@ -436,7 +436,7 @@ The design system follows progressive enhancement:
   background: #ffffff; /* Fallback */
   background: var(--color-neutral-0); /* Modern */
 }
-```
+```css
 
 ## Performance
 
@@ -461,6 +461,7 @@ The design system follows progressive enhancement:
 ### Automated Testing
 
 ```bash
+
 # HTML validation
 npx html-validate "public/**/*.html"
 
@@ -469,7 +470,7 @@ npx pa11y-ci
 
 # Lighthouse CI
 npx lhci autorun
-```
+```markdown
 
 ### Manual Testing
 

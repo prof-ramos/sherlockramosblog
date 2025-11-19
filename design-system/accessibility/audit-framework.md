@@ -4,9 +4,9 @@ A comprehensive framework for conducting accessibility audits on web projects.
 
 ## Audit Process Overview
 
-```
+```markdown
 1. Planning → 2. Automated Testing → 3. Manual Testing → 4. User Testing → 5. Reporting → 6. Remediation
-```
+```markdown
 
 ## 1. Planning Phase
 
@@ -36,16 +36,17 @@ A comprehensive framework for conducting accessibility audits on web projects.
 ### Tools Setup
 
 #### Browser Extensions
-```
+```bash
 - WAVE (WebAIM)
 - axe DevTools
 - Lighthouse
 - IBM Equal Access
 - ANDI (Accessible Name & Description Inspector)
-```
+```bash
 
 #### Command Line Tools
 ```bash
+
 # Pa11y
 npm install -g pa11y
 pa11y https://example.com
@@ -57,10 +58,11 @@ axe https://example.com
 # Lighthouse CI
 npm install -g @lhci/cli
 lhci autorun
-```
+```bash
 
 #### Continuous Integration
 ```yaml
+
 # .github/workflows/accessibility.yml
 name: Accessibility Tests
 
@@ -75,7 +77,7 @@ jobs:
         run: |
           npm install -g pa11y
           pa11y-ci
-```
+```bash
 
 ### Automated Tests Checklist
 
@@ -121,13 +123,13 @@ jobs:
 - [ ] Custom widgets (tabs, accordions) work with arrows
 
 #### Test Each Page
-```
+```markdown
 Homepage: _________ Pass/Fail
 Blog List: _________ Pass/Fail
 Blog Post: _________ Pass/Fail
 Contact Form: _______ Pass/Fail
 Search: ____________ Pass/Fail
-```
+```markdown
 
 ### Screen Reader Testing
 
@@ -138,7 +140,7 @@ Search: ____________ Pass/Fail
 - **Android**: TalkBack (built-in)
 
 #### NVDA Quick Start
-```
+```markdown
 Installation: Download from nvaccess.org
 Start: Ctrl + Alt + N
 Stop: Insert + Q
@@ -146,7 +148,7 @@ Read next: Down arrow
 Read previous: Up arrow
 Read all: Insert + Down arrow
 Elements list: Insert + F7
-```
+```markdown
 
 #### Testing Checklist
 - [ ] Page title announced
@@ -170,7 +172,7 @@ Test with screen reader:
 ### Visual Testing
 
 #### Color Contrast
-```
+```markdown
 Tool: WebAIM Contrast Checker
 URL: https://webaim.org/resources/contrastchecker/
 
@@ -182,10 +184,10 @@ Test:
 - Form labels and inputs
 - Error messages
 - Focus indicators
-```
+```markdown
 
 #### Color Blindness Simulation
-```
+```markdown
 Tools:
 - Chromatic Vision Simulator (browser extension)
 - Stark (Figma plugin)
@@ -195,10 +197,10 @@ Test for:
 - Deuteranopia (red-green)
 - Protanopia (red-green)
 - Tritanopia (blue-yellow)
-```
+```css
 
 #### Zoom and Reflow Testing
-```
+```css
 Test at:
 - 100% (baseline)
 - 200% (WCAG AA requirement)
@@ -209,7 +211,7 @@ Verify:
 - No horizontal scrolling
 - Functionality preserved
 - Layout adapts appropriately
-```
+```css
 
 ### Touch Target Testing
 
@@ -229,7 +231,7 @@ javascript:(function(){
     }
   });
 })();
-```
+```css
 
 ### Form Testing
 
@@ -283,24 +285,24 @@ javascript:(function(){
 ### Test Scenarios
 
 #### Scenario 1: Find Information
-```
+```markdown
 Task: Find a blog post about [topic]
 Success criteria:
 - User can navigate to blog
 - User can search or browse
 - User can find relevant post
 - User can read post content
-```
+```markdown
 
 #### Scenario 2: Contact Form
-```
+```markdown
 Task: Submit contact form
 Success criteria:
 - User can locate form
 - User understands all fields
 - User can complete form
 - User receives confirmation
-```
+```markdown
 
 ## 5. Reporting
 
@@ -315,6 +317,7 @@ Success criteria:
 #### Detailed Findings
 
 ```markdown
+
 ## Issue #1: Missing Alt Text on Images
 
 **Severity**: High
@@ -335,11 +338,11 @@ Add descriptive alt text to all images:
 
 <!-- After -->
 <img src="chart.png" alt="Bar chart showing 50% increase in sales from Q1 to Q2">
-```
+```javascript
 
 **Priority**: P0 - Fix immediately
 **Estimated Effort**: 4 hours
-```
+```javascript
 
 #### Priority Levels
 - **P0**: Blocker - Prevents access to core functionality
@@ -350,31 +353,31 @@ Add descriptive alt text to all images:
 ### Metrics
 
 #### Conformance Score
-```
+```markdown
 WCAG 2.1 Level AA Conformance:
 
 A: 47/50 criteria met (94%)
 AA: 38/42 criteria met (90%)
 
 Overall: 85/92 criteria met (92%)
-```
+```markdown
 
 #### Issues by Severity
-```
+```markdown
 Critical (P0): 3 issues
 High (P1): 8 issues
 Medium (P2): 15 issues
 Low (P3): 22 issues
 Total: 48 issues
-```
+```markdown
 
 #### Issues by Category
-```
+```markdown
 Perceivable: 12 issues
 Operable: 18 issues
 Understandable: 10 issues
 Robust: 8 issues
-```
+```markdown
 
 ## 6. Remediation
 
@@ -392,6 +395,7 @@ Robust: 8 issues
 ### Remediation Plan
 
 ```markdown
+
 ## Sprint 1 (Week 1-2)
 - [ ] Add alt text to all images (P0)
 - [ ] Fix keyboard navigation issues (P0)
@@ -410,7 +414,7 @@ Robust: 8 issues
 ## Backlog
 - [ ] AAA color contrast (P3)
 - [ ] Extended descriptions for complex images (P3)
-```
+```markdown
 
 ### Regression Testing
 
@@ -476,7 +480,7 @@ After remediation:
 
 <!-- ✅ Decorative -->
 <img src="divider.png" alt="">
-```
+```css
 
 #### Poor Color Contrast
 ```css
@@ -487,7 +491,7 @@ background: #ffffff;
 /* ✅ Good - 4.6:1 ratio */
 color: #595959;
 background: #ffffff;
-```
+```css
 
 #### Missing Form Labels
 ```html
@@ -497,7 +501,7 @@ background: #ffffff;
 <!-- ✅ Good -->
 <label for="email">Email</label>
 <input type="email" id="email" name="email">
-```
+```html
 
 #### No Keyboard Access
 ```html
@@ -506,4 +510,4 @@ background: #ffffff;
 
 <!-- ✅ Good -->
 <button type="submit">Submit</button>
-```
+```html

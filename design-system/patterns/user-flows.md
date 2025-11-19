@@ -6,12 +6,12 @@ Documentation of key user journeys and navigation patterns for the Sherlock Ramo
 
 ### 1. First-Time Visitor → Reading Blog Post
 
-```
+```markdown
 Entry Point → Homepage → Blog List → Blog Post → Related Content/Exit
-```
+```markdown
 
 **Detailed Flow**:
-```
+```text
 1. User lands on homepage
    ├─ Views hero section with introduction
    ├─ Sees recent posts preview
@@ -35,7 +35,7 @@ Entry Point → Homepage → Blog List → Blog Post → Related Content/Exit
    ├─ Explores categories
    ├─ Visits about page to learn more
    └─ Subscribes (if feature added)
-```
+```javascript
 
 **Optimization Opportunities**:
 - ✅ Clear CTA on homepage to blog
@@ -47,12 +47,12 @@ Entry Point → Homepage → Blog List → Blog Post → Related Content/Exit
 
 ### 2. Returning Visitor → Finding Specific Content
 
-```
+```markdown
 Entry Point → Search/Navigation → Results → Content → Exit
-```
+```markdown
 
 **Detailed Flow**:
-```
+```text
 1. User arrives (direct/bookmark/search)
    ├─ Uses site search
    ├─ Navigates via menu to category
@@ -72,7 +72,7 @@ Entry Point → Search/Navigation → Results → Content → Exit
    ├─ Checks related content
    ├─ Explores same category
    └─ Returns to search for more
-```
+```markdown
 
 **Optimization Opportunities**:
 - ✅ Prominent search bar in header
@@ -84,12 +84,12 @@ Entry Point → Search/Navigation → Results → Content → Exit
 
 ### 3. Researcher → Deep Dive into Topic
 
-```
+```markdown
 Entry Point → Category/Tag → Multiple Posts → Reference/Bookmark → Exit
-```
+```markdown
 
 **Detailed Flow**:
-```
+```text
 1. User arrives via search engine
    ├─ Lands on relevant blog post
    ├─ Sees category/tag context
@@ -110,7 +110,7 @@ Entry Point → Category/Tag → Multiple Posts → Reference/Bookmark → Exit
    ├─ Bookmarks category page
    ├─ Subscribes to updates (if available)
    └─ Shares with colleagues
-```
+```markdown
 
 **Optimization Opportunities**:
 - ✅ Clear category identification
@@ -122,12 +122,12 @@ Entry Point → Category/Tag → Multiple Posts → Reference/Bookmark → Exit
 
 ### 4. Mobile User → Quick Information Access
 
-```
+```markdown
 Mobile Entry → Quick Scan → Specific Section → Exit
-```
+```markdown
 
 **Detailed Flow**:
-```
+```text
 1. User arrives on mobile device
    ├─ Sees mobile-optimized layout
    ├─ Uses hamburger menu to navigate
@@ -146,7 +146,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
 4. User exits efficiently
    ├─ Quick exit via browser back
    ├─ Or explores related mobile-friendly content
-```
+```markdown
 
 **Optimization Opportunities**:
 - ✅ Mobile-friendly menu
@@ -160,12 +160,12 @@ Mobile Entry → Quick Scan → Specific Section → Exit
 
 ### Primary Navigation
 
-```
+```html
 ┌─────────────────────────────────────────┐
 │  Logo    Home  Posts  Categories  Tags  │
 │                About  Search    [Theme] │
 └─────────────────────────────────────────┘
-```
+```html
 
 **Desktop Navigation**:
 ```html
@@ -179,7 +179,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     <li><a href="/search/">Search</a></li>
   </ul>
 </nav>
-```
+```html
 
 **Mobile Navigation**:
 ```html
@@ -204,12 +204,12 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     </ul>
   </div>
 </nav>
-```
+```markdown
 
 ### Content Navigation
 
 #### Blog Post Navigation
-```
+```markdown
 ┌─────────────────────────────────────┐
 │  [Breadcrumb]                       │
 │  Home > Posts > Category > Title    │
@@ -230,11 +230,11 @@ Mobile Entry → Quick Scan → Specific Section → Exit
 │  • Similar Post 2                   │
 │  • Similar Post 3                   │
 └─────────────────────────────────────┘
-```
+```markdown
 
 ### Footer Navigation
 
-```
+```html
 ┌──────────────────────────────────────────┐
 │  [Quick Links]    [Categories]  [Social] │
 │  • Home           • Tech        • GitHub │
@@ -245,7 +245,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
 │  [Copyright & Legal]                      │
 │  © 2025 Sherlock Ramos | Privacy | Terms │
 └──────────────────────────────────────────┘
-```
+```css
 
 ## Navigation Patterns
 
@@ -259,7 +259,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
 <main id="main-content">
   <!-- Content -->
 </main>
-```
+```css
 
 ```css
 .skip-link {
@@ -276,7 +276,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
 .skip-link:focus {
   top: 0;
 }
-```
+```html
 
 ### Breadcrumbs
 
@@ -297,7 +297,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     </li>
   </ol>
 </nav>
-```
+```html
 
 ### Table of Contents
 
@@ -316,7 +316,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
-```
+```html
 
 ### Pagination
 
@@ -344,7 +344,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     </li>
   </ul>
 </nav>
-```
+```html
 
 ## Search Optimization
 
@@ -365,7 +365,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     <svg aria-hidden="true"><!-- Search icon --></svg>
   </button>
 </form>
-```
+```html
 
 ### Search Results
 
@@ -390,7 +390,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     <!-- More results -->
   </ul>
 </div>
-```
+```html
 
 ## Filter & Sort Patterns
 
@@ -423,7 +423,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     </button>
   </div>
 </div>
-```
+```html
 
 ### Sort Options
 
@@ -437,7 +437,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
     <option value="popular">Most Popular</option>
   </select>
 </div>
-```
+```css
 
 ## Wayfinding Elements
 
@@ -456,7 +456,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
   background-color: var(--color-primary-600);
   color: white;
 }
-```
+```css
 
 ### Back to Top Button
 
@@ -468,7 +468,7 @@ Mobile Entry → Quick Scan → Specific Section → Exit
 >
   ↑
 </button>
-```
+```javascript
 
 ```javascript
 // Show on scroll
@@ -480,7 +480,7 @@ window.addEventListener('scroll', () => {
     backToTop.hidden = true;
   }
 });
-```
+```html
 
 ## Performance Optimizations
 
@@ -494,7 +494,7 @@ window.addEventListener('scroll', () => {
 ```html
 <!-- Prefetch next likely page -->
 <link rel="prefetch" href="/posts/">
-```
+```html
 
 ### Search Performance
 
@@ -542,7 +542,7 @@ trackEvent('Filter', 'Category', categoryName);
 
 // Track exit points
 trackEvent('Exit', 'Page', pageName);
-```
+```javascript
 
 ### User Journey Metrics
 

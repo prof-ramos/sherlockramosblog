@@ -30,7 +30,7 @@ A comprehensive approach to building responsive layouts that prioritize mobile d
     width: 33.333%;
   }
 }
-```
+```css
 
 ```css
 /* ❌ Desktop-first (avoid) */
@@ -54,7 +54,7 @@ A comprehensive approach to building responsive layouts that prioritize mobile d
     padding: 1rem;
   }
 }
-```
+```css
 
 ### Why Mobile-First?
 
@@ -79,7 +79,7 @@ Based on common device sizes and content needs:
   --breakpoint-xl: 1280px;   /* Extra large devices (desktops) */
   --breakpoint-2xl: 1536px;  /* 2X large devices (large desktops) */
 }
-```
+```css
 
 ### Device Ranges
 
@@ -111,7 +111,7 @@ Based on common device sizes and content needs:
 
 /* 2X Extra large and up */
 @media (min-width: 1536px) { }
-```
+```css
 
 ### Container Widths
 
@@ -162,7 +162,7 @@ Based on common device sizes and content needs:
     max-width: 1536px;
   }
 }
-```
+```css
 
 ## Responsive Typography
 
@@ -191,7 +191,7 @@ html {
   font-size: clamp(1.5rem, 4vw, 3rem);
   /* Min: 1.5rem (24px), Preferred: 4% of viewport, Max: 3rem (48px) */
 }
-```
+```css
 
 ### Responsive Type Scale
 
@@ -212,7 +212,7 @@ html {
   .text-4xl { font-size: 3rem; }     /* 36px -> 48px */
   .text-5xl { font-size: 3.75rem; }  /* 48px -> 60px */
 }
-```
+```css
 
 ### Line Length
 
@@ -229,7 +229,7 @@ html {
 .prose-lg {
   max-width: 70ch;
 }
-```
+```css
 
 ## Responsive Grid System
 
@@ -265,7 +265,7 @@ html {
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-```
+```css
 
 ### Flexbox
 
@@ -284,7 +284,7 @@ html {
     gap: 1.5rem;
   }
 }
-```
+```html
 
 ## Responsive Images
 
@@ -317,7 +317,7 @@ html {
     loading="lazy"
   />
 </picture>
-```
+```html
 
 ### Srcset and Sizes
 
@@ -340,7 +340,7 @@ html {
   width="800"
   height="600"
 />
-```
+```css
 
 ### CSS Background Images
 
@@ -370,7 +370,7 @@ html {
     background-image: url('hero-desktop@2x.jpg');
   }
 }
-```
+```css
 
 ## Responsive Spacing
 
@@ -399,7 +399,7 @@ html {
     padding: 2rem; /* Desktop */
   }
 }
-```
+```css
 
 ### Responsive Margin Scale
 
@@ -424,7 +424,7 @@ html {
     --space-2xl: 6rem;    /* 96px */
   }
 }
-```
+```css
 
 ## Touch Targets
 
@@ -447,7 +447,7 @@ html {
     padding: 10px 16px;
   }
 }
-```
+```css
 
 ### Touch-Friendly Spacing
 
@@ -466,7 +466,7 @@ html {
     padding: 0.5rem 0.75rem;
   }
 }
-```
+```html
 
 ## Navigation Patterns
 
@@ -489,7 +489,7 @@ html {
     <li><a href="/about">About</a></li>
   </ul>
 </nav>
-```
+```css
 
 ```css
 /* Mobile: Hamburger menu */
@@ -526,13 +526,13 @@ html {
     display: flex !important;
   }
 }
-```
+```markdown
 
 ## Testing Strategy
 
 ### Device Testing
 
-```
+```markdown
 Mobile (Portrait):
 - iPhone SE (375x667)
 - iPhone 12/13/14 (390x844)
@@ -549,18 +549,18 @@ Desktop:
 - MacBook (1280x800)
 - Standard Desktop (1920x1080)
 - Large Desktop (2560x1440)
-```
+```markdown
 
 ### Browser DevTools
 
-```
+```markdown
 Chrome DevTools:
 1. Open DevTools (F12)
 2. Toggle device toolbar (Ctrl+Shift+M)
 3. Select device or custom dimensions
 4. Test responsive mode
 5. Check different DPR (Device Pixel Ratio)
-```
+```markdown
 
 ### Real Device Testing
 
@@ -600,7 +600,7 @@ Chrome DevTools:
   as="style"
   onload="this.onload=null;this.rel='stylesheet'"
 />
-```
+```css
 
 ### Responsive Images
 
@@ -621,7 +621,7 @@ Chrome DevTools:
   alt="Optimized image"
   loading="lazy"
 />
-```
+```css
 
 ### Conditional Loading
 
@@ -631,7 +631,7 @@ if (window.matchMedia('(min-width: 1024px)').matches) {
   // Load desktop-only features
   import('./desktop-features.js');
 }
-```
+```css
 
 ## Best Practices
 

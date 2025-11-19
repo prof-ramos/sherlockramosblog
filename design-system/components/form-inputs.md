@@ -29,7 +29,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
     <!-- Error message appears here -->
   </p>
 </div>
-```
+```css
 
 ### Sizes
 
@@ -54,7 +54,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
   border-radius: var(--radius-md);
   transition: all var(--duration-base) var(--easing-out);
 }
-```
+```css
 
 #### Focus
 ```css
@@ -63,7 +63,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
   border-color: var(--color-primary-600);
   box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
 }
-```
+```css
 
 #### Error
 ```css
@@ -75,14 +75,14 @@ Form inputs are interactive elements that allow users to enter and edit data.
 .form-input.is-invalid:focus {
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
-```
+```css
 
 #### Success
 ```css
 .form-input.is-valid {
   border-color: var(--color-success-500);
 }
-```
+```css
 
 #### Disabled
 ```css
@@ -92,7 +92,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
   cursor: not-allowed;
   opacity: 0.6;
 }
-```
+```css
 
 ## Textarea
 
@@ -111,7 +111,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
     Maximum 500 characters
   </p>
 </div>
-```
+```html
 
 ## Select Dropdown
 
@@ -133,7 +133,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
     Choose your country of residence
   </p>
 </div>
-```
+```html
 
 ## Checkbox
 
@@ -155,7 +155,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
     Please read our terms carefully
   </p>
 </div>
-```
+```html
 
 ### Checkbox Group
 
@@ -178,7 +178,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
     <label for="business" class="form-checkbox__label">Business</label>
   </div>
 </fieldset>
-```
+```html
 
 ## Radio Buttons
 
@@ -219,7 +219,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
     </label>
   </div>
 </fieldset>
-```
+```html
 
 ## Accessibility Requirements
 
@@ -303,7 +303,7 @@ Form inputs are interactive elements that allow users to enter and edit data.
 <input
   aria-describedby="field-help field-error"
 />
-```
+```html
 
 ## Autocomplete Attributes
 
@@ -332,7 +332,7 @@ Use appropriate autocomplete values for better UX and accessibility:
 <input type="text" autocomplete="username" />
 <input type="password" autocomplete="current-password" />
 <input type="password" autocomplete="new-password" />
-```
+```html
 
 ## Validation Patterns
 
@@ -357,7 +357,7 @@ Use appropriate autocomplete values for better UX and accessibility:
 <p id="username-error" role="alert" aria-live="polite">
   <!-- Error message injected by JavaScript -->
 </p>
-```
+```html
 
 ### Error Message Best Practices
 
@@ -376,7 +376,7 @@ Use appropriate autocomplete values for better UX and accessibility:
 <p class="form-error" role="alert">
   Password must be at least 8 characters and include a number
 </p>
-```
+```css
 
 ## Responsive Behavior
 
@@ -405,7 +405,7 @@ Use appropriate autocomplete values for better UX and accessibility:
     max-width: 600px;
   }
 }
-```
+```markdown
 
 ## Best Practices
 

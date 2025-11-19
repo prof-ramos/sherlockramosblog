@@ -48,7 +48,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
   transition: all var(--duration-base) var(--easing-out);
   box-shadow: var(--shadow-sm);
 }
-```
+```css
 
 ### Hover
 ```css
@@ -57,7 +57,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
-```
+```css
 
 ### Active
 ```css
@@ -66,7 +66,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
   box-shadow: var(--shadow-sm);
   transform: translateY(0);
 }
-```
+```css
 
 ### Focus
 ```css
@@ -74,7 +74,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
   outline: 2px solid var(--color-primary-600);
   outline-offset: 2px;
 }
-```
+```css
 
 ### Disabled
 ```css
@@ -85,7 +85,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
   box-shadow: none;
   opacity: 0.6;
 }
-```
+```css
 
 ### Loading
 - Show spinner/loading indicator
@@ -168,7 +168,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
   <svg><!-- Icon only --></svg>
   <!-- ❌ No text or aria-label -->
 </button>
-```
+```html
 
 ### ARIA Attributes
 
@@ -190,7 +190,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
   </svg>
   <span>Save</span>
 </button>
-```
+```css
 
 ### Icon Only
 ```html
@@ -199,7 +199,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
     <!-- Icon -->
   </svg>
 </button>
-```
+```css
 
 **Rules**:
 - Icons must be `aria-hidden="true"`
@@ -223,7 +223,7 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
     min-width: 120px;
   }
 }
-```
+```html
 
 ## Best Practices
 
@@ -265,21 +265,21 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
 <button class="button button--primary button--md">
   Get Started
 </button>
-```
+```html
 
 ### Secondary Button
 ```html
 <button class="button button--secondary button--md">
   Learn More
 </button>
-```
+```html
 
 ### Destructive Button
 ```html
 <button class="button button--destructive button--md">
   Delete Account
 </button>
-```
+```html
 
 ### Button Group
 ```html
@@ -287,4 +287,4 @@ Buttons are interactive elements that trigger actions when clicked or tapped.
   <button class="button button--secondary">Cancel</button>
   <button class="button button--primary">Save</button>
 </div>
-```
+```html

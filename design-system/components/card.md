@@ -28,7 +28,7 @@ Cards are containers for grouping related content and actions about a single sub
     </a>
   </div>
 </article>
-```
+```css
 
 ## Variants
 
@@ -41,7 +41,7 @@ Cards are containers for grouping related content and actions about a single sub
   overflow: hidden;
   transition: all var(--duration-base) var(--easing-out);
 }
-```
+```css
 
 ### Elevated Card
 ```css
@@ -54,7 +54,7 @@ Cards are containers for grouping related content and actions about a single sub
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
 }
-```
+```css
 
 ### Outlined Card
 ```css
@@ -62,7 +62,7 @@ Cards are containers for grouping related content and actions about a single sub
   border: 2px solid var(--color-neutral-300);
   box-shadow: none;
 }
-```
+```css
 
 ### Interactive Card (Clickable)
 ```html
@@ -81,7 +81,7 @@ Cards are containers for grouping related content and actions about a single sub
     </div>
   </a>
 </article>
-```
+```css
 
 ```css
 .card--interactive {
@@ -102,7 +102,7 @@ Cards are containers for grouping related content and actions about a single sub
   outline: 2px solid var(--color-primary-600);
   outline-offset: 2px;
 }
-```
+```css
 
 ## Spacing
 
@@ -123,7 +123,7 @@ Cards are containers for grouping related content and actions about a single sub
   padding: var(--spacing-4) var(--spacing-6);
   border-top: 1px solid var(--color-neutral-200);
 }
-```
+```html
 
 ## Accessibility Requirements
 
@@ -167,7 +167,7 @@ Cards are containers for grouping related content and actions about a single sub
   <div>January 15, 2025</div>
   <a href="/article">Read more</a>
 </div>
-```
+```html
 
 ### Interactive Card Accessibility
 
@@ -192,7 +192,7 @@ When making an entire card clickable:
   <p>Article description...</p>
   <a href="/share">Share</a>
 </article>
-```
+```css
 
 ```css
 /* Pseudo-element technique */
@@ -212,7 +212,7 @@ When making an entire card clickable:
   position: relative;
   z-index: 2;
 }
-```
+```html
 
 ## Image Handling
 
@@ -237,7 +237,7 @@ When making an entire card clickable:
   width="400"
   height="300"
 />
-```
+```css
 
 ### Aspect Ratio
 
@@ -249,7 +249,7 @@ When making an entire card clickable:
   object-fit: cover;
   display: block;
 }
-```
+```css
 
 ## Grid Layouts
 
@@ -259,7 +259,7 @@ When making an entire card clickable:
   <article class="card">...</article>
   <article class="card">...</article>
 </div>
-```
+```css
 
 ```css
 .card-grid {
@@ -281,7 +281,7 @@ When making an entire card clickable:
     grid-template-columns: repeat(3, 1fr);
   }
 }
-```
+```css
 
 ## Loading States
 
@@ -294,7 +294,7 @@ When making an entire card clickable:
     <div class="skeleton skeleton--text"></div>
   </div>
 </article>
-```
+```css
 
 ```css
 .skeleton {
@@ -319,7 +319,7 @@ When making an entire card clickable:
     animation: none;
   }
 }
-```
+```css
 
 ## Dark Mode Support
 
@@ -338,7 +338,7 @@ When making an entire card clickable:
     color: var(--color-neutral-300);
   }
 }
-```
+```css
 
 ## Best Practices
 
@@ -418,7 +418,7 @@ When making an entire card clickable:
     </div>
   </div>
 </article>
-```
+```html
 
 ### Product Card
 
@@ -447,4 +447,4 @@ When making an entire card clickable:
     </button>
   </div>
 </article>
-```
+```html

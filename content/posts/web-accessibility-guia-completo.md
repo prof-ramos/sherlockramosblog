@@ -48,7 +48,7 @@ Informação deve ser apresentada de forma que usuários possam perceber.
 
 <!-- ✅ Bom: Imagem decorativa -->
 <img src="divisor.png" alt="" />
-```
+```css
 
 #### 1.2 Contraste de Cores
 
@@ -69,7 +69,7 @@ Informação deve ser apresentada de forma que usuários possam perceber.
   color: #999999;
   background: #ffffff;
 }
-```
+```css
 
 **Ferramentas**:
 - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
@@ -91,7 +91,7 @@ Use HTML semântico:
   <div class="title">Título do Artigo</div>
   <div class="content">Conteúdo...</div>
 </div>
-```
+```html
 
 ### 2. Operável
 
@@ -117,7 +117,7 @@ Interface deve ser operável por todos.
 >
   Salvar
 </div>
-```
+```css
 
 #### 2.2 Indicadores de Foco
 
@@ -134,7 +134,7 @@ button:focus-visible {
 button:focus {
   outline: none; /* Nunca faça isso! */
 }
-```
+```javascript
 
 #### 2.3 Tempo Suficiente
 
@@ -158,7 +158,7 @@ function extendSession() {
   clearTimeout(timeout);
   startTimer();
 }
-```
+```html
 
 ### 3. Compreensível
 
@@ -207,7 +207,7 @@ Conteúdo deve ser compreensível.
 
   <button type="submit">Enviar</button>
 </form>
-```
+```html
 
 #### 3.2 Validação de Formulários
 
@@ -228,7 +228,7 @@ function validateEmail(input) {
     return true;
   }
 }
-```
+```html
 
 #### 3.3 Mensagens de Status
 
@@ -248,7 +248,7 @@ function validateEmail(input) {
 <div role="alert" aria-live="assertive">
   ✗ Erro ao salvar. Tente novamente.
 </div>
-```
+```bash
 
 ### 4. Robusto
 
@@ -257,9 +257,10 @@ Conteúdo deve funcionar com tecnologias assistivas.
 #### 4.1 HTML Válido
 
 ```bash
+
 # Valide seu HTML
 npx html-validate "**/*.html"
-```
+```bash
 
 #### 4.2 ARIA Correto
 
@@ -286,7 +287,7 @@ npx html-validate "**/*.html"
 
 <!-- ❌ Ruim: ARIA esconde elemento focável -->
 <button aria-hidden="true">Botão</button>
-```
+```html
 
 ## Componentes Comuns
 
@@ -307,7 +308,7 @@ npx html-validate "**/*.html"
   <button onclick="closeDialog()">Cancelar</button>
   <button onclick="confirmDelete()">Excluir</button>
 </div>
-```
+```html
 
 ```javascript
 // Gerenciamento de foco
@@ -357,7 +358,7 @@ function trapFocus(e) {
     closeDialog();
   }
 }
-```
+```html
 
 ### Tabs Acessíveis
 
@@ -403,13 +404,14 @@ function trapFocus(e) {
     Conteúdo da Tab 2
   </div>
 </div>
-```
+```bash
 
 ## Testes de Acessibilidade
 
 ### Testes Automatizados
 
 ```bash
+
 # Pa11y
 npm install -g pa11y
 pa11y https://example.com
@@ -420,7 +422,7 @@ axe https://example.com
 
 # Lighthouse
 npx lighthouse https://example.com --only-categories=accessibility
-```
+```bash
 
 ### Testes Manuais
 

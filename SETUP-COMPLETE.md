@@ -42,6 +42,7 @@
 ### Step 1: Clone to Your Local Machine
 
 ```bash
+
 # Clone the repository
 git clone https://github.com/prof-ramos/sherlockramosblog.git
 cd sherlockramosblog
@@ -51,36 +52,37 @@ git checkout claude/design-system-accessibility-01RQ19Uq3G8DdTV8ZaTrP2Gk
 
 # Initialize theme submodule
 git submodule update --init --recursive
-```
+```bash
 
 ### Step 2: Install Hugo
 
 #### macOS
 ```bash
 brew install hugo
-```
+```bash
 
 #### Linux (Ubuntu/Debian)
 ```bash
 sudo apt-get install hugo
-```
+```bash
 
 #### Windows (Chocolatey)
 ```bash
 choco install hugo-extended
-```
+```bash
 
 Or download from: https://gohugo.io/installation/
 
 ### Step 3: Run Locally
 
 ```bash
+
 # Start development server
 hugo server -D
 
 # Visit in browser
 open http://localhost:1313
-```
+```bash
 
 You should see:
 - ✅ Homepage with welcome message
@@ -115,15 +117,17 @@ Follow **[CUSTOMIZATION-GUIDE.md](CUSTOMIZATION-GUIDE.md)** to:
 #### Option A: Merge to Main (Automatic Deployment)
 
 ```bash
+
 # Create pull request
 gh pr create --title "Add design system and blog foundation" \
   --body "Complete design system with accessibility features"
 
 # Or visit:
+
 # https://github.com/prof-ramos/sherlockramosblog/pull/new/claude/design-system-accessibility-01RQ19Uq3G8DdTV8ZaTrP2Gk
 
 # After PR is merged, GitHub Actions will automatically deploy
-```
+```markdown
 
 #### Option B: Manual Setup
 
@@ -139,7 +143,7 @@ Your site will be live at:
 
 ## File Structure Overview
 
-```
+```css
 sherlockramosblog/
 │
 ├── 📁 design-system/              # Design system documentation
@@ -169,7 +173,7 @@ sherlockramosblog/
 ├── 📄 hugo.toml                   # Hugo configuration
 ├── 📄 CUSTOMIZATION-GUIDE.md      # How to customize
 └── 📄 SETUP-COMPLETE.md           # This file
-```
+```bash
 
 ## Key Features 🌟
 
@@ -212,17 +216,18 @@ Edit `assets/css/tokens.css`:
 :root {
   --color-primary-600: #YOUR_COLOR;
 }
-```
+```bash
 
 ### Add Blog Post
 
 ```bash
+
 # Create new post
 hugo new posts/your-post-name.md
 
 # Or copy template
 cp content/posts/bem-vindo.md content/posts/new-post.md
-```
+```bash
 
 ### Update Site Info
 
@@ -232,7 +237,7 @@ title = 'Your Blog Name'
 [params]
 title = "Your Name"
 description = "Your description"
-```
+```bash
 
 ## Testing Checklist ✓
 
@@ -255,12 +260,12 @@ Install Hugo: https://gohugo.io/installation/
 ### Theme Not Loading
 ```bash
 git submodule update --init --recursive
-```
+```bash
 
 ### Port 1313 Already in Use
 ```bash
 hugo server -D --port 1314
-```
+```bash
 
 ### CSS Not Applying
 Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
@@ -299,7 +304,7 @@ Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
 ## What's Included 📦
 
 ### Design Tokens
-```
+```markdown
 ✓ 11-shade color palettes
 ✓ Typography scale (xs to 9xl)
 ✓ Spacing scale (0 to 96)
@@ -307,30 +312,30 @@ Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
 ✓ Shadows (sm to 2xl)
 ✓ Animation timings
 ✓ Z-index layers
-```
+```markdown
 
 ### Components
-```
+```markdown
 ✓ Buttons (primary, secondary, variants)
 ✓ Forms (inputs, textareas, selects, checkboxes)
 ✓ Cards (elevated, outlined, interactive)
 ✓ Navigation (desktop & mobile)
 ✓ Breadcrumbs
 ✓ All WCAG AA compliant
-```
+```javascript
 
 ### Pages
-```
+```javascript
 ✓ Homepage with hero
 ✓ Blog post list
 ✓ Individual blog posts
 ✓ About page
 ✓ Search page
 ✓ 404 error page (automatic)
-```
+```javascript
 
 ### Features
-```
+```bash
 ✓ Dark mode
 ✓ Responsive design
 ✓ SEO optimized
@@ -341,7 +346,7 @@ Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
 ✓ Table of contents
 ✓ Reading time
 ✓ Tags & categories
-```
+```bash
 
 ## Deployment Options 🚀
 
@@ -350,12 +355,13 @@ Already configured! Just merge to main.
 
 ### Netlify
 ```bash
+
 # Build command
 hugo --minify
 
 # Publish directory
 public
-```
+```bash
 
 ### Vercel
 Import GitHub repository, Vercel auto-detects Hugo.
@@ -363,8 +369,9 @@ Import GitHub repository, Vercel auto-detects Hugo.
 ### Custom Server
 ```bash
 hugo --minify
+
 # Upload /public folder to server
-```
+```bash
 
 ## Analytics (Optional) 📊
 
@@ -373,7 +380,7 @@ Add to `hugo.toml`:
 ```toml
 [params.analytics.google]
 SiteVerificationTag = "YOUR_TAG"
-```
+```bash
 
 ### Plausible Analytics
 More privacy-friendly alternative.

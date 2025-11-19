@@ -30,7 +30,7 @@ Design tokens são as unidades fundamentais de design - valores nomeados que rep
 --spacing-4: 1rem;
 --font-size-lg: 1.125rem;
 --radius-md: 0.375rem;
-```
+```css
 
 **Benefícios**:
 - Consistência automática
@@ -127,13 +127,13 @@ Balance entre consistência e flexibilidade:
 ### Fase 1: Inventário
 
 Faça um inventário de tudo que existe:
-```
+```json
 ✓ Componentes atuais
 ✓ Padrões em uso
 ✓ Cores utilizadas
 ✓ Tipografia
 ✓ Espaçamentos
-```
+```json
 
 ### Fase 2: Definição de Tokens
 
@@ -151,7 +151,7 @@ Crie seus design tokens:
     "6": "1.5rem"
   }
 }
-```
+```markdown
 
 ### Fase 3: Documentação
 

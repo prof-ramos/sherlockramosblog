@@ -17,7 +17,7 @@ Edit `design-system/tokens/design-tokens.json` to change your brand colors:
     }
   }
 }
-```
+```css
 
 After editing the JSON, update `assets/css/tokens.css`:
 
@@ -26,7 +26,7 @@ After editing the JSON, update `assets/css/tokens.css`:
   --color-primary-500: #YOUR_PRIMARY_COLOR;
   --color-primary-600: #YOUR_PRIMARY_DARK;
 }
-```
+```css
 
 ### 2. Typography
 
@@ -37,7 +37,7 @@ Edit `hugo.toml` to add custom fonts:
 ```toml
 [params.assets]
 disableFingerprinting = false
-```
+```css
 
 Then update `assets/css/tokens.css`:
 
@@ -46,7 +46,7 @@ Then update `assets/css/tokens.css`:
   /* Replace with your preferred font */
   --font-family-sans: 'Your Font', -apple-system, BlinkMacSystemFont, sans-serif;
 }
-```
+```css
 
 #### Adjust Font Sizes
 
@@ -57,7 +57,7 @@ In `assets/css/tokens.css`:
   --font-size-base: 1rem;      /* Change base size */
   --font-size-lg: 1.125rem;    /* Adjust as needed */
 }
-```
+```css
 
 ### 3. Spacing Scale
 
@@ -73,7 +73,7 @@ Modify spacing in `assets/css/tokens.css`:
   --spacing-4: 1.25rem;  /* Larger */
   --spacing-6: 2rem;     /* Larger */
 }
-```
+```bash
 
 ### 4. Border Radius
 
@@ -89,7 +89,7 @@ Adjust roundness of components:
   --radius-md: 0.25rem;  /* Instead of 0.375rem */
   --radius-lg: 0.375rem; /* Instead of 0.5rem */
 }
-```
+```bash
 
 ## Hugo Configuration
 
@@ -106,7 +106,7 @@ languageCode = 'pt-br'  # or 'en' for English
 title = "Your Name"
 description = "Your blog description"
 author = "Your Name"
-```
+```toml
 
 ### Social Links
 
@@ -124,7 +124,7 @@ url = "https://linkedin.com/in/YOUR_PROFILE"
 [[params.socialIcons]]
 name = "twitter"
 url = "https://twitter.com/YOUR_HANDLE"
-```
+```css
 
 ### Navigation Menu
 
@@ -136,7 +136,7 @@ identifier = "custom"
 name = "Custom Page"
 url = "/custom/"
 weight = 45
-```
+```css
 
 ## Color Schemes
 
@@ -147,7 +147,7 @@ weight = 45
   --color-primary-600: #0284c7;    /* Sky Blue */
   --color-secondary-600: #7c3aed;  /* Purple */
 }
-```
+```css
 
 ### Preset 2: Green & Teal (Nature)
 
@@ -156,7 +156,7 @@ weight = 45
   --color-primary-600: #059669;    /* Emerald */
   --color-secondary-600: #0d9488;  /* Teal */
 }
-```
+```css
 
 ### Preset 3: Orange & Red (Warm)
 
@@ -165,7 +165,7 @@ weight = 45
   --color-primary-600: #ea580c;    /* Orange */
   --color-secondary-600: #dc2626;  /* Red */
 }
-```
+```css
 
 ### Preset 4: Indigo & Pink (Modern)
 
@@ -174,7 +174,7 @@ weight = 45
   --color-primary-600: #4f46e5;    /* Indigo */
   --color-secondary-600: #ec4899;  /* Pink */
 }
-```
+```css
 
 ## Advanced Customization
 
@@ -195,7 +195,7 @@ Create `assets/css/custom.css`:
   transform: scale(1.02);
   box-shadow: var(--shadow-xl);
 }
-```
+```css
 
 Then reference it in your layouts.
 
@@ -211,7 +211,7 @@ Customize dark mode in `assets/css/tokens.css`:
     --theme-border: #404040;    /* Your dark borders */
   }
 }
-```
+```css
 
 ### Animation Timing
 
@@ -228,7 +228,7 @@ Adjust animation speeds:
   --duration-base: 350ms;
   --duration-slow: 500ms;
 }
-```
+```toml
 
 ## Content Customization
 
@@ -240,7 +240,7 @@ Edit `content/_index.md` (create if doesn't exist):
 ---
 title: "Home"
 ---
-```
+```toml
 
 Or customize in `hugo.toml`:
 
@@ -248,7 +248,7 @@ Or customize in `hugo.toml`:
 [params.homeInfoParams]
 Title = "Your custom title 👋"
 Content = "Your custom introduction text."
-```
+```bash
 
 ### About Page
 
@@ -262,17 +262,18 @@ title: "About"
 ## Your About Content
 
 Write about yourself here...
-```
+```bash
 
 ### Creating New Posts
 
 ```bash
+
 # Using Hugo CLI
 hugo new posts/my-new-post.md
 
 # Or create manually
 touch content/posts/my-new-post.md
-```
+```bash
 
 Template:
 
@@ -287,7 +288,7 @@ description: "Post description for SEO"
 ---
 
 Your content here...
-```
+```markdown
 
 ## Deployment Customization
 
@@ -348,7 +349,7 @@ Hugo automatically minifies in production. Ensure in `hugo.toml`:
 [minify]
 disableXML = true
 minifyOutput = true
-```
+```css
 
 ## Accessibility Customization
 
@@ -362,7 +363,7 @@ Customize focus styles in `assets/css/extended.css`:
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
-```
+```bash
 
 ### Contrast
 
@@ -373,6 +374,7 @@ Use the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
 ### Local Testing
 
 ```bash
+
 # Development server with drafts
 hugo server -D
 
@@ -381,20 +383,22 @@ hugo server --minify
 
 # Check for broken links
 hugo --printPathWarnings
-```
+```bash
 
 ### Build
 
 ```bash
+
 # Production build
 hugo --minify
 
 # Build output is in /public folder
-```
+```bash
 
 ### Accessibility Testing
 
 ```bash
+
 # Install tools
 npm install -g pa11y lighthouse
 
@@ -403,19 +407,20 @@ pa11y http://localhost:1313
 
 # Run Lighthouse
 lighthouse http://localhost:1313 --only-categories=accessibility
-```
+```bash
 
 ## Troubleshooting
 
 ### Theme Not Loading
 
 ```bash
+
 # Verify submodule
 git submodule update --init --recursive
 
 # Check hugo.toml
 theme = 'PaperMod'  # Must match folder name
-```
+```bash
 
 ### CSS Not Applying
 
@@ -427,12 +432,13 @@ theme = 'PaperMod'  # Must match folder name
 ### Build Errors
 
 ```bash
+
 # Verbose output
 hugo --verbose
 
 # Debug mode
 hugo --debug
-```
+```bash
 
 ## Next Steps
 

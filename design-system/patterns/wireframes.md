@@ -26,7 +26,7 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 
 ### Desktop Layout (1280px)
 
-```
+```markdown
 ┌────────────────────────────────────────────────────────────┐
 │  [Logo]    Home  Posts  Categories  Tags  About  [Search]  │ ← Header (sticky)
 ├────────────────────────────────────────────────────────────┤
@@ -70,11 +70,11 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │                                                             │
 │  © 2025 Sherlock Ramos                                     │
 └────────────────────────────────────────────────────────────┘
-```
+```javascript
 
 ### Tablet Layout (768px)
 
-```
+```javascript
 ┌──────────────────────────────────────┐
 │  [Logo]    [☰ Menu]      [Search]    │ ← Header
 ├──────────────────────────────────────┤
@@ -99,11 +99,11 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  └────────────┘  └────────────┘     │
 │                                       │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Mobile Layout (375px)
 
-```
+```markdown
 ┌───────────────────────┐
 │ [☰]  [Logo]  [Search] │ ← Sticky header
 ├───────────────────────┤
@@ -134,13 +134,13 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  └─────────────────┘ │
 │                       │
 └───────────────────────┘
-```
+```markdown
 
 ## Blog Post List Page
 
 ### Desktop Layout
 
-```
+```css
 ┌────────────────────────────────────────────────────────────┐
 │  [Header Navigation]                                        │
 ├────────────────────────────────────────────────────────────┤
@@ -174,11 +174,11 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 ├────────────────────────────────────────────────────────────┤
 │  [Footer]                                                   │
 └────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Mobile Layout
 
-```
+```markdown
 ┌───────────────────────┐
 │  [Header]             │
 ├───────────────────────┤
@@ -208,13 +208,13 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  [Load More]          │
 │                       │
 └───────────────────────┘
-```
+```markdown
 
 ## Individual Blog Post
 
 ### Desktop Layout
 
-```
+```markdown
 ┌────────────────────────────────────────────────────────────┐
 │  [Header Navigation]                                        │
 ├────────────────────────────────────────────────────────────┤
@@ -261,11 +261,11 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 ├────────────────────────────────────────────────────────────┤
 │  [Footer]                                                   │
 └────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ### Mobile Layout
 
-```
+```markdown
 ┌───────────────────────┐
 │  [Header]             │
 ├───────────────────────┤
@@ -308,11 +308,11 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  ← Prev    Next →     │
 │                       │
 └───────────────────────┘
-```
+```markdown
 
 ## Category/Tag Page
 
-```
+```markdown
 ┌────────────────────────────────────────────────────────────┐
 │  [Header]                                                   │
 ├────────────────────────────────────────────────────────────┤
@@ -336,11 +336,11 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  [Load More Posts]                                          │
 │                                                             │
 └────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ## Search Results Page
 
-```
+```markdown
 ┌────────────────────────────────────────────────────────────┐
 │  [Header]                                                   │
 ├────────────────────────────────────────────────────────────┤
@@ -365,11 +365,11 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  [1] 2 Next →                                              │
 │                                                             │
 └────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ## About Page
 
-```
+```markdown
 ┌────────────────────────────────────────────────────────────┐
 │  [Header]                                                   │
 ├────────────────────────────────────────────────────────────┤
@@ -396,12 +396,12 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  [GitHub] [LinkedIn] [Twitter] [Email]                     │
 │                                                             │
 └────────────────────────────────────────────────────────────┘
-```
+```markdown
 
 ## Component Library Preview
 
 ### Button States
-```
+```markdown
 ┌──────────────────────────────────────┐
 │  [Default Button]                    │
 │  [Hover State]                       │
@@ -409,10 +409,10 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  [Disabled]                          │
 │  [Loading...]                        │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Form Components
-```
+```markdown
 ┌──────────────────────────────────────┐
 │  Label                               │
 │  [____________Input_________]        │
@@ -423,10 +423,10 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │  ☐ Checkbox option                  │
 │  ○ Radio option                     │
 └──────────────────────────────────────┘
-```
+```markdown
 
 ### Cards
-```
+```markdown
 ┌──────────────┐  ┌──────────────┐
 │ [Image]      │  │ [Icon]       │
 │              │  │              │
@@ -437,7 +437,7 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 │              │  │              │
 │ [Action CTA] │  │ [Learn More] │
 └──────────────┘  └──────────────┘
-```
+```markdown
 
 ## Interactive Prototypes
 
@@ -450,7 +450,7 @@ Visual representations of key pages and user interface layouts for the Sherlock 
 ### Interaction Specifications
 
 #### Hamburger Menu (Mobile)
-```
+```markdown
 State 1: Closed
 ┌───────────────┐
 │ ☰  Logo  🔍  │
@@ -469,10 +469,10 @@ State 2: Open
 │ Tags          │
 │ About         │
 └───────────────┘
-```
+```markdown
 
 #### Search Overlay
-```
+```markdown
 State 1: Icon only
 [🔍]
 
@@ -487,12 +487,12 @@ State 2: Expanded
 │ • accessibility          │
 │ • web development        │
 └──────────────────────────┘
-```
+```css
 
 ## Annotation Guidelines
 
 ### Design Annotations
-```
+```css
 ┌─────────────────┐
 │ Component Name  │ ← Typography: font-size-2xl, font-weight-bold
 │                 │
@@ -504,19 +504,19 @@ State 2: Expanded
      ^                Box-shadow: shadow-sm
      |
      Spacing: spacing-6 between elements
-```
+```markdown
 
 ### Responsive Breakpoints
-```
+```markdown
 Mobile:    < 640px   (1 column)
 Tablet:    768px     (2 columns)
 Desktop:   1024px    (3 columns)
 Large:     1280px+   (max-width container)
-```
+```markdown
 
 ## Accessibility Annotations
 
-```
+```markdown
 ┌─────────────────────┐
 │ [Button]            │ ← min-height: 44px (WCAG AAA)
 └─────────────────────┘   Focus indicator: 2px solid primary-600
@@ -529,7 +529,7 @@ Color Contrast:
 ARIA:
 - aria-label="Descriptive label"
 - role="navigation"
-```
+```markdown
 
 ## Handoff Documentation
 
