@@ -20,7 +20,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 
 #### Demographics
 - **Education**: Computer Science degree
-- **Income**: Middle to upper-middle class
+- **Income**: Middle-class to upper-middle-class
 - **Tech Savviness**: High
 - **Primary Device**: MacBook Pro, iPhone
 - **Browser**: Chrome, Firefox DevTools
@@ -140,7 +140,7 @@ Detailed user personas and testing strategies for the Sherlock Ramos Blog.
 
 #### Demographics
 - **Education**: Engineering degree, MBA
-- **Income**: Upper-middle to upper class
+- **Income**: Upper-middle-class to upper-class
 - **Tech Savviness**: High (but rusty on specifics)
 - **Primary Device**: MacBook Pro, iPhone Pro
 - **Browser**: Safari, Chrome

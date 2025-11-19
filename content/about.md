@@ -33,4 +33,4 @@ Trabalho principalmente com:
 
 ## Contato
 
-Fique à vontade para me encontrar nas redes sociais ou entrar em contato para colaborações e discussões técnicas.
+Fique à-vontade para me encontrar nas redes sociais ou entrar em contato para colaborações e discussões técnicas.

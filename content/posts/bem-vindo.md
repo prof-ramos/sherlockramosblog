@@ -38,11 +38,11 @@ Este blog foi desenvolvido com foco em:
 
 - **Acessibilidade WCAG 2.1 AA**: Garantindo que todos possam acessar o conteúdo
 - **Design Responsivo**: Otimizado para todos os dispositivos
-- **Performance**: Carregamento rápido e experiência fluida
+- **Desempenho**: Carregamento rápido e experiência fluida
 - **Design System**: Padrões consistentes e reutilizáveis
 
 ## Vamos Conversar!
 
-Fique à vontade para interagir através das redes sociais e compartilhar suas opiniões.
+Fique à-vontade para interagir através das redes sociais e compartilhar suas opiniões.
 
 Obrigado pela visita! 🚀

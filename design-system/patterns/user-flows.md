@@ -118,7 +118,7 @@ Entry Point → Category/Tag → Multiple Posts → Reference/Bookmark → Exit
 - ✅ Related categories/tags
 - ✅ Chronological or topical ordering options
 - ✅ Print-friendly layouts
-- ✅ "Open in new tab" friendly design
+- ✅ "Open-in-new-tab"-friendly design
 
 ### 4. Mobile User → Quick Information Access
 
