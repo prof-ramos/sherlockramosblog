@@ -60,7 +60,7 @@ content:
             label: Legenda
             type: string
         
-      - name: body
+      - name: body 
         label: Conteúdo
         type: rich-text
 
