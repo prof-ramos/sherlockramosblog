@@ -1,4 +1,4 @@
-baseURL: '/'
+baseURL: 'https://prof-ramos.github.io/sherlockramosblog/'
 languageCode: pt-br
 defaultContentLanguage: pt-br
 title: 'Sherlock Ramos'
@@ -8,7 +8,7 @@ params:
   env: production
   description: ""
   author: Me
-  
+
   # ProfileMode (ProfileMod)
   profileMode:
     enabled: true
