@@ -60,7 +60,7 @@ content:
             label: Legenda
             type: string
         
-      - name: body 
+      - name: body
         label: Conteúdo
         type: rich-text
 
@@ -75,7 +75,7 @@ content:
         type: string
         
       - name: body
-        label: Conteúdo 
+        label: Conteúdo
         type: markdown
         
   # Site Settings (not editable via PagesCMS, reference only)
