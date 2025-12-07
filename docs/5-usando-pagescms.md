@@ -126,11 +126,11 @@ No editor rich-text, você pode:
 
 1. **PagesCMS**: Criar e editar posts
 2. **GitHub**: Versionar automaticamente
-3. **Replit Deploy**: Publica automaticamente as mudanças
+3. **Deploy**: Publica automaticamente as mudanças
 
 ### Para Configurações do Site
 
-1. **Editar diretamente**: `hugo.yaml` no Replit
+1. **Editar diretamente**: `hugo.yaml` localmente
 2. **Fazer commit**: Enviar mudanças para GitHub
 3. **Deploy**: Atualizar site publicado
 
@@ -145,7 +145,7 @@ content:
   - name: posts
     fields:
       # ... campos existentes ...
-      
+
       - name: author
         label: Autor
         type: string
@@ -157,7 +157,7 @@ content:
 ```yaml
 content:
   # ... posts e about ...
-  
+
   - name: projects
     label: Projetos
     type: collection
@@ -208,7 +208,7 @@ Se preferir outra solução:
 
 ### Problema: PagesCMS não encontra meu repositório
 
-**Solução**: 
+**Solução**:
 1. Verifique que o repositório está no GitHub (não GitLab/Bitbucket)
 2. Certifique-se que `.pages.yml` está na raiz do projeto
 3. Tente desconectar e reconectar no pagescms.org
@@ -224,7 +224,7 @@ Se preferir outra solução:
 
 **Solução**:
 1. Aguarde o GitHub processar o commit (1-2 min)
-2. Force rebuild no Replit Deploy
+2. Force rebuild no seu serviço de deploy
 3. Limpe cache do navegador (Ctrl+Shift+R)
 
 ## 🔗 Links Úteis
