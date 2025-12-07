@@ -23,29 +23,29 @@ content:
         label: Título
         type: string
         required: true
-        
+
       - name: date
         label: Data
         type: datetime
         required: true
-        
+
       - name: draft
         label: Rascunho
         type: boolean
         default: false
-        
+
       - name: tags
         label: Tags
         type: list
-        
+
       - name: categories
         label: Categorias
         type: list
-        
+
       - name: description
         label: Descrição
         type: text
-        
+
       - name: cover
         label: Imagem de Capa
         type: object
@@ -59,7 +59,7 @@ content:
           - name: caption
             label: Legenda
             type: string
-        
+
       - name: body
         label: Conteúdo
         type: rich-text
@@ -67,16 +67,16 @@ content:
   # About Page
   - name: about
     label: Página Sobre
-    type: single
+    type: file
     path: content/about/_index.md
     fields:
       - name: title
         label: Título
         type: string
-        
+
       - name: body
         label: Conteúdo
         type: markdown
-        
+
   # Site Settings (not editable via PagesCMS, reference only)
   # Edit hugo.yaml directly for theme configuration
