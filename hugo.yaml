@@ -20,9 +20,9 @@ params:
     imageHeight: 120
     buttons:
       - name: Posts
-        url: /posts/
+        url: /sherlockramosblog/posts/
       - name: Sobre
-        url: /about/
+        url: /sherlockramosblog/about/
 
   # Configurações do PaperMod
   ShowReadingTime: true
@@ -56,15 +56,15 @@ menu:
   main:
     - identifier: posts
       name: Posts
-      url: /posts/
+      url: /sherlockramosblog/posts/
       weight: 10
     - identifier: about
       name: Sobre
-      url: /about/
+      url: /sherlockramosblog/about/
       weight: 20
     - identifier: tags
       name: Tags
-      url: /tags/
+      url: /sherlockramosblog/tags/
       weight: 30
 
 markup:
