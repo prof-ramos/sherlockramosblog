@@ -6,10 +6,10 @@ const CACHE_NAME = `sherlock-ramos-${CACHE_VERSION}`;
 
 // Assets para pré-cache (critical assets)
 const PRECACHE_ASSETS = [
-    '/',
-    '/posts/',
-    '/about/',
-    '/offline.html'
+    '/sherlockramosblog/',
+    '/sherlockramosblog/posts/',
+    '/sherlockramosblog/about/',
+    '/sherlockramosblog/offline.html'
 ];
 
 // Install: Pre-cache critical assets
@@ -91,7 +91,7 @@ async function networkFirstStrategy(request) {
         
         // Fallback to offline page for HTML
         if (request.destination === 'document') {
-            return caches.match('/offline.html');
+            return caches.match('/sherlockramosblog/offline.html');
         }
         
         throw error;
