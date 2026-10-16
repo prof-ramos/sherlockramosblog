@@ -13,9 +13,25 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
 
+  profileMode:
+    enabled: true
+    title: "Sherlock Ramos"
+    subtitle: "Bem-vindo ao meu blog pessoal"
+    imageUrl: ""
+    imageTitle: ""
+    buttons:
+      - name: Posts
+        url: /posts/
+      - name: Tags
+        url: /tags/
+
 menu:
   main:
     - identifier: posts
       name: Posts
       url: /posts/
       weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
