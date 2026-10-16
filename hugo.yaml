@@ -27,6 +27,10 @@ params:
       - name: Tags
         url: /tags/
 
+  socialIcons:
+    - name: twitter
+      url: "https://x.com/GatoMaconhado_"
+
 menu:
   main:
     - identifier: posts
