@@ -17,8 +17,10 @@ params:
     enabled: true
     title: "Sherlock Ramos"
     subtitle: "Bem-vindo ao meu blog pessoal"
-    imageUrl: ""
-    imageTitle: ""
+    imageUrl: "https://pbs.twimg.com/profile_images/2060421238992879616/g6HdDJO__400x400.jpg"
+    imageTitle: "Sherlock Ramos"
+    imageWidth: 150
+    imageHeight: 150
     buttons:
       - name: Posts
         url: /posts/
