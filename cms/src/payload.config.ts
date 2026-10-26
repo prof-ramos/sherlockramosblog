@@ -44,6 +44,6 @@ export default buildConfig({
   // A coleção já permite leitura pública. Entregue o arquivo diretamente pelo
   // Blob para evitar tráfego de imagem passando pelas Functions do CMS.
   plugins: [vercelBlobStorage({ collections: { media: { disablePayloadAccessControl: true } },
-    token: process.env.BLOB_READ_WRITE_TOKEN, alwaysInsertFields: true, addRandomSuffix: true })],
+    token: process.env.BLOB_READ_WRITE_TOKEN, alwaysInsertFields: true, addRandomSuffix: false })],
   typescript: { outputFile: path.resolve(dirname, 'payload-types.ts') },
 })

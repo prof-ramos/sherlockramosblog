@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { mkdtemp, rm } from 'node:fs/promises'
+import { mkdtemp, readFile, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { test } from 'node:test'
@@ -58,6 +58,10 @@ test('real SQLite: owner bootstrap, drafts, revisions, authorization and media',
     assert.equal(media.alt, 'Test image')
     assert.equal(media.mimeType, 'image/webp')
     assert.ok(media.url)
+    const stored = await sharp(await readFile(path.join(dir, 'media', media.filename!))).metadata()
+    assert.equal(stored.width, 1600)
+    assert.equal(stored.width, media.width)
+    assert.notEqual(media.filename, media.sizes?.thumbnail?.filename)
     await payload.update({ collection: 'posts', id: post.id, data: { cover: media.id } })
     await assert.rejects(payload.delete({ collection: 'media', id: media.id }), /referenciada/)
     // A publicação pode sobreviver à retenção das versões antigas.

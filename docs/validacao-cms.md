@@ -42,6 +42,13 @@ O adaptador Drizzle não fecha o cliente libSQL no `destroy` genérico. Os coman
 e testes agora fecham explicitamente a conexão, com verificação de encerramento.
 O comando de migração também usa esse procedimento, sem aumentar timeouts.
 
+O teste real do Blob encontrou outra condição: `addRandomSuffix` do adaptador
+3.92.0 modifica o nome do documento ao enviar as miniaturas em paralelo. A
+aplicação agora atribui um UUID antes de gerar os tamanhos e usa o sufixo do Blob
+desativado. Nome e dimensões da imagem principal são verificados separadamente
+da miniatura. Objetos públicos recém-criados também podem levar alguns segundos
+para estar disponíveis no CDN; os testes remotos conferem a entrega efetiva.
+
 Não foram enviados e-mails nem contratados planos pagos. Recursos Turso Starter
 e Blob de Preview/produção são separados. Segredos e senhas ficam no 1Password;
 arquivos temporários e dados de teste não são versionados.

@@ -1,4 +1,5 @@
 import path from 'node:path'
+import { randomUUID } from 'node:crypto'
 import type { CollectionConfig } from 'payload'
 import { ownerOnly } from '../access'
 
@@ -17,7 +18,16 @@ export const Media: CollectionConfig = {
   admin: { description: 'Imagens são públicas por endereço, mesmo quando usadas em rascunhos.' },
   fields: [{ name: 'alt', label: 'Descrição da imagem', type: 'text', required: true },
     { name: 'caption', label: 'Legenda', type: 'text' }],
-  hooks: { beforeDelete: [async ({ id, req }) => {
+  hooks: {
+    beforeOperation: [({ args, operation, req }) => {
+      // Defina o nome antes de gerar os tamanhos. O adaptador Blob, com
+      // addRandomSuffix, altera data.filename em uploads paralelos de miniaturas.
+      if ((operation === 'create' || operation === 'update') && req.file) {
+        req.file.name = `${randomUUID()}${path.extname(req.file.name).toLowerCase()}`
+      }
+      return args
+    }],
+    beforeDelete: [async ({ id, req }) => {
     let page = 1
     while (true) {
       const current = await req.payload.find({ collection: 'posts', depth: 0, overrideAccess: true, page, limit: 50, req })
