@@ -1,0 +1,35 @@
+name: CMS
+on:
+  push:
+    paths: ['cms/**', '.github/workflows/cms.yml']
+  pull_request:
+    paths: ['cms/**', '.github/workflows/cms.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cms
+    env:
+      NODE_ENV: production
+      PAYLOAD_SECRET: ci-only-placeholder-not-used-outside-isolated-tests
+      ADMIN_EMAIL: owner@example.test
+      DATABASE_URL: file:./.data/ci.db
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.15.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: cms/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile --prod=false
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: mkdir -p .data
+      - run: pnpm db:migrate
+      - run: pnpm build
