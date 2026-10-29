@@ -12,7 +12,7 @@ test('real SQLite: owner bootstrap, drafts, revisions, authorization and media',
   process.env.MEDIA_DIR = `${dir}/media`
   Object.assign(process.env, { NODE_ENV: 'development' })
   delete process.env.BLOB_READ_WRITE_TOKEN
-  const { getPayload } = await import('payload')
+  const { createLocalReq, getPayload, logoutOperation } = await import('payload')
   const config = (await import('../src/payload.config.ts')).default
   const payload = await getPayload({ config })
   try {
@@ -29,6 +29,12 @@ test('real SQLite: owner bootstrap, drafts, revisions, authorization and media',
       email: 'owner@example.test', password: 'long-enough-test-password',
     } })
     assert.ok(login.token)
+    const authHeaders = new Headers({ Authorization: `JWT ${login.token}` })
+    const session = await payload.auth({ headers: authHeaders })
+    assert.equal(session.user?.id, owner.id)
+    await logoutOperation({ collection: payload.collections.users,
+      req: await createLocalReq({ user: session.user! }, payload) })
+    assert.equal((await payload.auth({ headers: authHeaders })).user, null)
     const richtext = { root: { type: 'root', version: 1, direction: null, format: '' as const,
       indent: 0, children: [{ type: 'paragraph', version: 1, direction: null,
         format: '', indent: 0, children: [{ type: 'text', version: 1, text: 'Original', format: 0, detail: 0, mode: 'normal', style: '' }] }] } }
@@ -42,6 +48,11 @@ test('real SQLite: owner bootstrap, drafts, revisions, authorization and media',
     assert.equal((await payload.find({ collection: 'posts', overrideAccess: false })).docs[0]?.title, 'Original')
     await payload.update({ collection: 'posts', id: post.id, draft: true, data: { title: 'Unpublished revision', _status: 'draft' } })
     assert.equal((await payload.find({ collection: 'posts', overrideAccess: false })).docs[0]?.title, 'Original')
+    const anonymousDrafts = await payload.find({ collection: 'posts', draft: true, overrideAccess: false })
+    assert.ok(anonymousDrafts.docs.every(doc => doc.title !== 'Unpublished revision'))
+    const otherUser = { ...owner, email: 'other@example.test' }
+    await assert.rejects(payload.findVersions({ collection: 'posts', overrideAccess: false, user: otherUser }))
+    await assert.rejects(payload.update({ collection: 'posts', id: post.id, overrideAccess: false, user: otherUser, data: { title: 'Intruder' } }))
     assert.equal((await payload.find({ collection: 'posts', draft: true, overrideAccess: false, user: owner })).docs[0]?.title, 'Unpublished revision')
     await payload.update({ collection: 'posts', id: post.id, data: { _status: 'draft' } })
     assert.equal((await payload.find({ collection: 'posts', overrideAccess: false })).totalDocs, 0)

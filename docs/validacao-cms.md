@@ -68,3 +68,27 @@ administrativo. Exportação cobre registro atual e última revisão, não todo 
 histórico de versões. Imagens são públicas por URL. Domínio personalizado não foi
 configurado; a entrada no endereço padrão da Vercel é verificada separadamente
 no registro do deploy/PR.
+
+## Revisão local do PR #8 — 29/10/2026
+
+Na base `affc251226be7a60413036506ff856bb9f91275c`, a recuperação de uma
+postagem publicada com capa e revisão privada que remove essa capa recolocava a
+imagem na revisão. A reprodução exportou o banco SQLite e restaurou em outro
+banco vazio: a revisão restaurada tinha `cover=1`, embora a exportação registrasse
+`cover=null`. O restaurador agora envia `null` explicitamente; omitir o campo com
+`undefined` preservava o valor anterior durante o update do Payload.
+
+O teste de recuperação confere tanto a capa da versão pública quanto sua ausência
+na revisão privada. A suíte de acesso também verifica que `draft=true` não revela
+a revisão a visitantes, que uma identidade diferente do proprietário não lê o
+histórico nem altera posts, e que o logout nativo invalida o token da sessão.
+
+Esta rodada usa dados fictícios, banco SQLite e arquivos temporários locais,
+Node 26.12.1 e as dependências fixadas no PR. Não revalida Turso/Blob remotos,
+sessão expirada, navegação visual ou aceite editorial, e não altera produção,
+Hugo, credenciais ou infraestrutura.
+
+Validação final: instalação com lockfile congelado, 9 testes aprovados sem skips,
+checagem TypeScript, migração em banco SQLite vazio e build de produção local
+concluídos com exit 0. A regressão de capa foi observada antes da correção e passou
+depois, sem substituir o fluxo real de exportação/recuperação por mocks.

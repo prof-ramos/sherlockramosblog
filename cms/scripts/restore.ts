@@ -35,7 +35,9 @@ try {
     imageMap.set(image.id, doc.id)
   }
   function data(post: Post) {
-    const cover = post.cover ? imageMap.get(Number(post.cover)) : undefined
+    // null clears a cover removed by the private revision; undefined would
+    // leave the previously restored public cover in place on update.
+    const cover = post.cover ? imageMap.get(Number(post.cover)) : null
     if (post.cover && !cover) throw new Error('Capa ausente na exportação.')
     return { title: post.title, slug: post.slug, description: post.description,
       content: remapReferences(post.content, { media: imageMap, tags: tagMap, posts: postMap }) as Post['content'], publishedAt: post.publishedAt,
