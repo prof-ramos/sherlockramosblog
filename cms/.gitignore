@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.vercel/
+.env*
+!.env.example
+.data/
+media/
+exports/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.agents/
+skills-lock.json
+next-env.d.ts

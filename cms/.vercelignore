@@ -1,0 +1,10 @@
+.env*
+.data
+.next
+node_modules
+exports
+.agents
+skills-lock.json
+test-results
+playwright-report
+*.tsbuildinfo
